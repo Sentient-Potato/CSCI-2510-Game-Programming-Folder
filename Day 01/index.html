@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Drawing!</title>
+    </head>
+    <body>
+        <canvas id="canv">
+
+        </canvas>
+        <script>
+            let canvas = document.querySelector("#canv")
+            let ctx = canvas.getContext("2d")
+
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+
+            //This signals to the context that we're going to draw something (Prof note)
+            ctx.save()
+
+            //Set center of our object (Prof note)
+            ctx.translate(50,50)
+
+            ctx.lineTo(0,-5)
+            ctx.lineTo(15,-20)
+            ctx.lineTo(30,10)
+            ctx.lineTo(0,50)
+
+            ctx.lineTo(-30,10)
+            ctx.lineTo(-15,-20)
+
+            ctx.fillStyle = "Pink"
+            ctx.fill()
+
+
+            //This signals that we're done drawing (Prof note)
+            ctx.restore()
+        </script>
+    </body>
+</html>
+
+
