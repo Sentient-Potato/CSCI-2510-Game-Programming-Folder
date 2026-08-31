@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Drawing!</title>
+        <title>Game Loop</title>
         <style>
             *{
                 margin: 0;
@@ -13,7 +13,9 @@
 
         </canvas>
 
-        <script src = "Vector2.js"></script>
+        <script src = "../engine/Vector2.js"></script>
+        <script src = "../engine/Engine.js"></script>
+        <script src = "../engine/Input.js"></script>
 
         <script>
             let canvas = document.querySelector("#canv")
@@ -23,17 +25,29 @@
             let position = new Vector2(50, 50)
 
             function gameLoop() {
-                update(0.5, 0.1)
+                update()
                 draw()
                 requestAnimationFrame(gameLoop)
             }
             
-            function update(x, y) {
-                position.x = position.x + x
-                position.y = position.y + y
+            function update() {
+                //console.log(Input.keysDown) //Debug line, check in console
+
+                if(Input.keysDown.includes("ArrowRight"))
+                    position.x = position.x + 1
+
+                if(Input.keysDown.includes("ArrowLeft"))
+                    position.x = position.x - 1
+                
+                if(Input.keysDown.includes("ArrowUp"))
+                    position.y = position.y - 1
+
+                if(Input.keysDown.includes("ArrowDown"))
+                    position.y = position.y + 1
+
             }
 
-            function draw() {
+            function draw(ctx) {
                 canvas.width = window.innerWidth
                 canvas.height = window.innerHeight
 
@@ -56,9 +70,8 @@
                 //This signals that we're done drawing (Prof note)
                 ctx.restore()
             }
-
-            gameLoop()
             
+            Engine.start()
             
         </script>
     </body>
