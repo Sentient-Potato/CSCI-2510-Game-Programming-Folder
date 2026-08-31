@@ -1,38 +1,65 @@
 <html>
     <head>
         <title>Drawing!</title>
+        <style>
+            *{
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body>
         <canvas id="canv">
 
         </canvas>
+
+        <script src = "Vector2.js"></script>
+
         <script>
             let canvas = document.querySelector("#canv")
             let ctx = canvas.getContext("2d")
 
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
 
-            //This signals to the context that we're going to draw something (Prof note)
-            ctx.save()
+            let position = new Vector2(50, 50)
 
-            //Set center of our object (Prof note)
-            ctx.translate(50,50)
+            function gameLoop() {
+                update(0.5, 0.1)
+                draw()
+                requestAnimationFrame(gameLoop)
+            }
+            
+            function update(x, y) {
+                position.x = position.x + x
+                position.y = position.y + y
+            }
 
-            ctx.lineTo(0,-5)
-            ctx.lineTo(15,-20)
-            ctx.lineTo(30,10)
-            ctx.lineTo(0,50)
+            function draw() {
+                canvas.width = window.innerWidth
+                canvas.height = window.innerHeight
 
-            ctx.lineTo(-30,10)
-            ctx.lineTo(-15,-20)
+                //This signals to the context that we're going to draw something (Prof note)
+                ctx.save()
 
-            ctx.fillStyle = "Pink"
-            ctx.fill()
+                //Set center of our object (Prof note)
+                ctx.translate(position.x, position.y)
 
+                ctx.lineTo(0,-5)
+                ctx.lineTo(15,-20)
+                ctx.lineTo(30,10)
+                ctx.lineTo(0,50)
+                ctx.lineTo(-30,10)
+                ctx.lineTo(-15,-20)
 
-            //This signals that we're done drawing (Prof note)
-            ctx.restore()
+                ctx.fillStyle = "Pink"
+                ctx.fill()
+
+                //This signals that we're done drawing (Prof note)
+                ctx.restore()
+            }
+
+            gameLoop()
+            
+            
         </script>
     </body>
 </html>
