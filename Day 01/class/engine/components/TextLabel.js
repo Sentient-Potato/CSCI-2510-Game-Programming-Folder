@@ -14,6 +14,7 @@ class TextLabel extends Component{
         ctx.rotate(this.transform.rotation)
 
         ctx.fillStyle = this.fillStyle
+        ctx.font = "28px sans serif"
 
         ctx.fillText(this.text, 0, 0)
 

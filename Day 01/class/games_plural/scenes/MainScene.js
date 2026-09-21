@@ -4,7 +4,7 @@ class MainScene extends Scene{
         super()
         this.instantiate(new MainGameObject(), new Vector2(800, 500), 0)
         this.instantiate(new EnemyGameObject(), new Vector2(100, 100), Math.PI)
-        this.instantiate(new PointsGameObject(), new Vector2(10, 20))
+        this.instantiate(new PointsGameObject(), new Vector2(10, 30))
     }
 }
 
