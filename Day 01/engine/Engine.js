@@ -3,6 +3,8 @@ class Engine{
 
     static ctx
 
+    static currentScene
+
     static start() {
         //Grab the canvas element and put it into an element name
         Engine.canvas = document.querySelector("#canv")
@@ -13,6 +15,8 @@ class Engine{
         addEventListener("keydown", Input.keydown)
         //keyboard stalker 2
         addEventListener("keyup", Input.keyup)
+
+        Engine.currentScene.start()
 
         requestAnimationFrame(Engine.gameLoop)
     }
@@ -28,7 +32,7 @@ class Engine{
 
     static update() {
         //temp code will be changed on Wednesday day04
-        update(0.4, 0.1)
+        Engine.currentScene.update()
     }
 
     static draw() {
@@ -36,7 +40,8 @@ class Engine{
         //Note that this also clears the canvas for us
         Engine.canvas.width = window.innerWidth
         Engine.canvas.height = window.innerHeight
-        draw(Engine.ctx)
+        
+        Engine.currentScene.draw(Engine.ctx)
     }
 
 }
