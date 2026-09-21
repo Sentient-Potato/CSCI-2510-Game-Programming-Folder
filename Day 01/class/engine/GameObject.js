@@ -42,9 +42,13 @@ class GameObject {
         this.markForDestroy = true
     }
 
+    getComponent(type){
+        return this.components.find(c => c instanceof type)
+    }
+
     static find(name){
         // Same as Engine.currentScene.gameObjects.find(function(go){return go.name == name})
         // Like Python's lambda x: x == y
-        return Engine.currentScene.gameObjects.find(go=>go.name == name)
+        return Engine.currentScene.gameObjects.find(go => go.name == name)
     }
 }
