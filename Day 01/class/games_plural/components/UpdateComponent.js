@@ -1,4 +1,7 @@
 class UpdateComponent extends Component{
+
+    speed = 70
+
     start(){
         this.timeSinceLastLaser = 0
     }
@@ -7,16 +10,16 @@ class UpdateComponent extends Component{
         this.timeSinceLastLaser += 1
 
         if(Input.keysDown.includes("ArrowRight"))
-            this.transform.position.x = this.gameObject.transform.position.x + 1
+            this.transform.position.x = this.gameObject.transform.position.x + Time.deltaTime * this.speed
 
         if(Input.keysDown.includes("ArrowLeft"))
-            this.transform.position.x = this.gameObject.transform.position.x - 1
+            this.transform.position.x = this.gameObject.transform.position.x - Time.deltaTime * this.speed
         
         if(Input.keysDown.includes("ArrowUp"))
-            this.transform.position.y = this.gameObject.transform.position.y - 1
+            this.transform.position.y = this.gameObject.transform.position.y - Time.deltaTime * this.speed
 
         if(Input.keysDown.includes("ArrowDown"))
-            this.transform.position.y = this.gameObject.transform.position.y + 1
+            this.transform.position.y = this.gameObject.transform.position.y + Time.deltaTime*  this.speed
 
         if(this.timeSinceLastLaser > 30){
             this.timeSinceLastLaser = 0

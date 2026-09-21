@@ -1,4 +1,7 @@
-class DrawComponent extends Component{
+class TextLabel extends Component{
+    fillStyle = "black"
+    text = "[BLANK]"
+
     draw(ctx) {
         let position = this.transform.position
 
@@ -7,21 +10,14 @@ class DrawComponent extends Component{
 
         //Set center of our object (Prof note)
         ctx.translate(position.x, position.y)
+        ctx.scale(this.transform.scale.x, this.transform.scale.y)
+        ctx.rotate(this.transform.rotation)
 
-        ctx.beginPath()
-        ctx.lineTo(0,-5)
-        ctx.lineTo(15,-20)
-        ctx.lineTo(30,10)
-        ctx.lineTo(0,50)
-        ctx.lineTo(-30,10)
-        ctx.lineTo(-15,-20)
+        ctx.fillStyle = this.fillStyle
 
-        ctx.fillStyle = "Pink"
-        ctx.fill()
+        ctx.fillText(this.text, 0, 0)
 
         //This signals that we're done drawing (Prof note)
         ctx.restore()
     }
-
-
 }

@@ -26,6 +26,8 @@ class Engine{
         Engine.update()
         Engine.draw()
 
+        Time.update()
+
         //...then call the game loop again the next time the browser refresh
         requestAnimationFrame(Engine.gameLoop)
     }
