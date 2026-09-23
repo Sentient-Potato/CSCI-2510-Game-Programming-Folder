@@ -13,4 +13,13 @@ class Assets {
         new Vector2 (20, 25),
         new Vector2 (-20, 25)
     ]
+
+    static shape = [
+            new Vector2(0, -20),
+            new Vector2(15,-20),
+            new Vector2(30,10),
+            new Vector2(0,50),
+            new Vector2(-30,10),
+            new Vector2(-15,-20)
+    ]
 }
