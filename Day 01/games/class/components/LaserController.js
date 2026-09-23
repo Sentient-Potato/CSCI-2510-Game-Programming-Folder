@@ -8,9 +8,9 @@ class LaserController extends Component{
 
         // Collision check
         let myPosition = this.transform.position
-        let enemyGameObject = GameObject.find("Enemy")
+        let enemyGameObjects = GameObject.findGameObjectsWithTag("Enemy")
 
-        if(enemyGameObject){
+        for (const enemyGameObject of enemyGameObjects){
             let enemyPosition = enemyGameObject.transform.position
             let distance = myPosition.minus(enemyPosition).magnitude
 
