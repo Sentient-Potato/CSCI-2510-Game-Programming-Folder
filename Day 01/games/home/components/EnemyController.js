@@ -1,0 +1,24 @@
+class EnemyController extends Component {
+    // uhhh, do this later...
+}
+
+
+
+
+
+// class EnemyController extends Component{
+//     direction = 1
+
+//     update(){
+//         this.transform.position.x += Time.deltaTime * 70 * this.direction
+//         if(this.transform.position.x > 1400){
+//             this.direction = -1
+//         }
+//         if(this.transform.position.x < 75)
+//             this.direction = 1
+        
+//         if(this.gameObject.getComponent(Health).health <= 0){
+//             this.gameObject.destroy()
+//         }
+//     }
+// }
