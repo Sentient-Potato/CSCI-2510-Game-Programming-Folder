@@ -27,4 +27,11 @@ class Assets {
         new Vector2(14, 14),
         new Vector2(0, 14)
     ]
+
+    static board = [
+        new Vector2(0, 0),
+        new Vector2(Globals.boardWidth, 0),
+        new Vector2(Globals.boardWidth, Globals.boardHeight),
+        new Vector2(0, Globals.boardHeight)
+    ]
 }

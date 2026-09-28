@@ -1,7 +1,9 @@
 class GenericLevel extends Scene {
     constructor() {
         super()
-        
+        this.instantiate(new BoardGameObject(), new Vector2(Globals.windowBoardCenterX, Globals.windowBoardCenterY))
+        this.instantiate(new PointsGameObject(), new Vector2(10, 30))
+        this.instantiate(new LivesGameObject(), new Vector2(10, 70))
     }
 }
 

@@ -19,16 +19,25 @@
         <script src = "../../engine/components/TextLabel.js"></script>
         <script src = "../../engine/components/Transform.js"></script>
 
-        <script src = "Assets.js"></script>
         <script src = "Globals.js"></script>
+        <script src = "Assets.js"></script>
+        
+        <script src = "components/EnemyController.js"></script>
+        <script src = "components/LivesController.js"></script>
+        <script src = "components/PacManController.js"></script>
+        <script src = "components/PointsController.js"></script>
 
+        <script src = "gameObjects/BoardGameObject.js"></script>
+        <script src = "gameObjects/LivesGameObject.js"></script>
+        <script src = "gameObjects/PacManGameObject.js"></script>
+        <script src = "gameObjects/PointsGameObject.js"></script>
 
-
+        <script src = "scenes/GenericLevel.js"></script>
 
         <script>
 
-            Engine.draw()
-            Engine.start()
+            // Insert level when made
+            Engine.start(GenericLevel)
             
         </script>
 

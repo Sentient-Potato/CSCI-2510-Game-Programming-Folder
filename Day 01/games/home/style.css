@@ -4,13 +4,8 @@
     box-sizing: border-box;
     background: #000521;
     overflow: hidden;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 #canv {
-    background-color:black;
+    background-color:#0f0212;
 }
