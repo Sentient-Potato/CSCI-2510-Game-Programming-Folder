@@ -5,10 +5,6 @@
     </head>
     <body>
         <canvas id="canv"></canvas>
-        
-        <script src = "../../engine/components/Polygon.js"></script>
-        <script src = "../../engine/components/TextLabel.js"></script>
-        <script src = "../../engine/components/Transform.js"></script>
 
         <script src = "../../engine/Component.js"></script>
         <script src = "../../engine/Engine.js"></script>
@@ -17,7 +13,11 @@
         <script src = "../../engine/Scene.js"></script>
         <script src = "../../engine/SceneManager.js"></script>
         <script src = "../../engine/Time.js"></script>
-        <script src = "../../engine/Vector.js"></script>
+        <script src = "../../engine/Vector2.js"></script>
+
+        <script src = "../../engine/components/Polygon.js"></script>
+        <script src = "../../engine/components/TextLabel.js"></script>
+        <script src = "../../engine/components/Transform.js"></script>
 
         <script src = "Assets.js"></script>
         <script src = "Globals.js"></script>
@@ -27,7 +27,7 @@
 
         <script>
 
-            SceneManager.currentScene = new Level01()
+            Engine.draw()
             Engine.start()
             
         </script>
