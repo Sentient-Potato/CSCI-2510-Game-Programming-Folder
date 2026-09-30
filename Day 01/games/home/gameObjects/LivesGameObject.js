@@ -1,7 +1,7 @@
 class LivesGameObject extends GameObject{
     constructor(){
-        super("LivesGameObject")
-        this.addComponent(new TextLabel(), {fillStyle: "white", text: "3 Lives"})
+        super("LivesGameObject", [], "UI")
+        this.addComponent(new TextLabel(), {fillStyle: "black", text: "3 Lives"})
         this.addComponent(new LivesController())
     }
 }

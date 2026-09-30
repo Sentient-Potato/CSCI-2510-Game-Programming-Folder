@@ -18,5 +18,8 @@ class UpdateComponent extends Component {
 
         this.transform.position.x += Time.deltaTime * UpdateVelocity.velocityX
         this.transform.position.y += Time.deltaTime * UpdateVelocity.velocityY
+
+        // Does not need a camera for dynamic positioning. 
+        //Camera.main.transform.position = this.transform.position.clone()
     }
 }

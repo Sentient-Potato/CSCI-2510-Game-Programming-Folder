@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
     <head>
         <title>Pac-Man Game Loop</title>
@@ -15,34 +16,36 @@
         <script src = "../../engine/Time.js"></script>
         <script src = "../../engine/Vector2.js"></script>
 
+        <script src = "../../engine/components/Camera.js"></script>
         <script src = "../../engine/components/Polygon.js"></script>
         <script src = "../../engine/components/TextLabel.js"></script>
         <script src = "../../engine/components/Transform.js"></script>
 
-        <script src = "Globals.js"></script>
-        <script src = "Assets.js"></script>
+        <script src = "./Globals.js"></script>
+        <script src = "./Assets.js"></script>
+        <script src = "./Settings.js"></script>
         
-        <script src = "components/EnemyController.js"></script>
-        <script src = "components/LivesController.js"></script>
-        <script src = "components/LoadImage.js"></script>
-        <script src = "components/PointsController.js"></script>
-        <script src = "components/TileMapLoader.js"></script>
-        <script src = "components/UpdateComponent.js"></script>
-        <script src = "components/UpdateDirection.js"></script>
-        <script src = "components/UpdateVelocity.js"></script>
+        <script src = "./components/EnemyController.js"></script>
+        <script src = "./components/LivesController.js"></script>
+        <script src = "./components/LoadImage.js"></script>
+        <script src = "./components/PointsController.js"></script>
+        <script src = "./components/TileMapLoader.js"></script>
+        <script src = "./components/UpdateComponent.js"></script>
+        <script src = "./components/UpdateDirection.js"></script>
+        <script src = "./components/UpdateVelocity.js"></script>
 
-        <script src = "gameObjects/BoardGameObject.js"></script>
-        <script src = "gameObjects/LivesGameObject.js"></script>
-        <script src = "gameObjects/PacManGameObject.js"></script>
-        <script src = "gameObjects/PointsGameObject.js"></script>
-        <script src = "gameObjects/TileMapGameObject.js"></script>
+        <script src = "./gameObjects/BoardGameObject.js"></script>
+        <script src = "./gameObjects/LivesGameObject.js"></script>
+        <script src = "./gameObjects/PacManGameObject.js"></script>
+        <script src = "./gameObjects/PointsGameObject.js"></script>
+        <script src = "./gameObjects/TileMapGameObject.js"></script>
 
-        <script src = "scenes/GenericLevel.js"></script>
+        <script src = "./scenes/GenericLevel.js"></script>
 
         <script>
 
             // Insert level when made
-            Engine.start(GenericLevel)
+            Engine.start(GenericLevel, Settings)
             
         </script>
 

@@ -7,20 +7,29 @@ class GameObject {
 
     tags = []
 
+    layer = "default"
+
     get transform(){
         return this.components[0]; 
     }
 
-    constructor(name, tags = []){
+    constructor(name, tags = [], layer = "default"){
         this.addComponent(new Transform())
         this.name = name
         this.tags = tags
+        this.layer = layer
     }
 
-    addComponent(component, parameters){
+    addComponent(component, parameters) {
         Object.assign(component, parameters)
         this.components.push(component)
         component.gameObject = this
+    }
+
+    broadcastMessage(message, args = []) {
+        for (const component of this.components) {
+            component[message]?.(...args)
+        }
     }
 
     start() {
@@ -53,10 +62,14 @@ class GameObject {
     static find(name){
         // Same as SceneManager.currentScene.gameObjects.find(function(go){return go.name == name})
         // Like Python's lambda x: x == y
-        return SceneManager.currentScene.gameObjects.find(go => go.name == name)
+        return SceneManager.currentScene.gameObjects.find(go=>go.name == name)
     }
 
     static findGameObjectsWithTag(tag){
-        return SceneManager.currentScene.gameObjects.filter(go => go.tags.includes(tag))
+        return SceneManager.currentScene.gameObjects.filter(go=>go.tags.includes(tag))
+    }
+
+    static findGameObjectByType(type) {
+        return SceneManager.currentScene.gameObjects.filter(go=>go.components.find(c=>c instanceof type))
     }
 }

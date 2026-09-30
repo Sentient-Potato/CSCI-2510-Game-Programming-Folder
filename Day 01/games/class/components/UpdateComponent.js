@@ -26,5 +26,7 @@ class UpdateComponent extends Component{
             instantiate(new LaserGameObject(), this.transform.position.clone())
         }
 
+        Camera.main.transform.position = this.transform.position.clone()
+
     }
 }

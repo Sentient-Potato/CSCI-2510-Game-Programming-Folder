@@ -1,6 +1,6 @@
 class PacManGameObject extends GameObject {
     constructor() {
-        super("PacMan")
+        super("PacMan", [], "pacman")
         this.addComponent(new UpdateComponent())
 
         this.image = new LoadImage(Assets.pacmanRightImage)

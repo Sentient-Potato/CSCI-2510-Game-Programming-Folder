@@ -3,7 +3,7 @@ class EnemyController extends Component{
 
     update(){
         this.transform.position.x += Time.deltaTime * 70 * this.direction
-        if(this.transform.position.x > 1400){
+        if(this.transform.position.x > 400){
             this.direction = -1
         }
         if(this.transform.position.x < 75)

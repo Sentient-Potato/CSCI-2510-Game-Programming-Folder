@@ -2,10 +2,5 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #000521;
     overflow: hidden;
-}
-
-#canv {
-    background-color:#0f0212;
 }
