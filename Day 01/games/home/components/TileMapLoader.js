@@ -1,10 +1,31 @@
 class TileMapLoader extends Component {
-    
+    static tileMap = TileMaps.tileMaps
+    static walls = new Set()
+    static ghosts = new Set()
+    static food = new Set()
+    pacman
+    update() {
+        TileMapLoader.walls.clear()
+        TileMapLoader.ghosts.clear()
+        TileMapLoader.food.clear()
+
+
+
+    }
 }
 
+// class LevelController extends Component {
+//     start() {
+//         SceneManager.loadScene(GenericLevel, true)
+//     }
 
-
-
+//     update() {
+//         let enemyGameObject = GameObject.find("Enemy")
+//         if (!enemyGameObject) {
+//             SceneManager.loadScene(Level02)
+//         }
+//     }
+// }
 
 // Tile map from Kenny Yip Coding
 // X = wall, O = skip, P = pac man, ' ' = food
