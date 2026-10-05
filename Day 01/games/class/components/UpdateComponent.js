@@ -23,7 +23,8 @@ class UpdateComponent extends Component{
 
         if(this.timeSinceLastLaser > 30){
             this.timeSinceLastLaser = 0
-            instantiate(new LaserGameObject(), this.transform.position.clone())
+            let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
+            laserGameObject.getComponent(Polygon).fillStyle = "blue"
         }
 
         Camera.main.transform.position = this.transform.position.clone()

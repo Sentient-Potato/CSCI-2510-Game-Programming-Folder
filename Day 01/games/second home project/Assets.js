@@ -7,10 +7,10 @@ class Assets {
     ]
 
     static laser = [
-        new Vector2(0, 0),
-        new Vector2(40, 10),
-        new Vector2(0, 20),
-        new Vector2(15, 10)
+        new Vector2(25, 35),
+        new Vector2(85, 40),
+        new Vector2(25, 45),
+        new Vector2(40, 40)
     ]
 
     static alienBoss = [
@@ -59,4 +59,11 @@ class Assets {
         new Vector2(60, 20),
         new Vector2(40, 20)
     ]
+
+    static arena = [
+        new Vector2(0,0),
+        new Vector2(1920, 0),
+        new Vector2(1920, 980),
+        new Vector2(0, 980)
+        ]
 }
