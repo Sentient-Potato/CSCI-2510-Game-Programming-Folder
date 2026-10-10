@@ -2,7 +2,7 @@ class EnemyController extends Component {
     direction = 1
 
     update() {
-        this.transform.x += Time.deltaTime * 70 * this.direction
+        this.transform.y += Time.deltaTime * 70 * this.direction
         if (this.transform.position.y > Globals.maxYcoordinate) 
             this.direction = -1
 
