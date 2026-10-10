@@ -1,0 +1,36 @@
+A text file of features to add to this game.
+
+Done:
+- Hold spacebar to shoot lasers
+
+
+Planned:
+- Stop the player from moving off the "game area"
+- Display player health on UI
+- Boss health bar on UI
+- Boss shoots lasers
+- Boss summons "minions" that shoot lasers and move randomly
+- Extra points when destroying minion ships
+- Player death
+- Level attributes to alter game difficulty
+- Starting menu GUI
+- Power-ups that players can pick up and use
+
+
+
+Maybe?:
+- Charge gauge/counter that increases for each hit on boss. Allows user to temporarily shoot stronger lasers until gauge is empty
+- Boss shoots missiles that aim at player
+
+
+
+Level attributes:
+- Extra enemy health (scaled)
+- Extra enemy damage (scaled)
+- Faster enemy lasers
+- Faster enemies
+- Slower player ship
+- Slower player lasers
+- Extra enemy lasers
+- BULLET HELL LASERS
+
