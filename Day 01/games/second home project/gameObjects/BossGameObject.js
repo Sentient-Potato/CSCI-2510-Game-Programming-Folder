@@ -2,6 +2,8 @@ class BossGameObject extends GameObject {
     constructor() {
         super("Boss", ["Boss", "Enemy"], "boss")
         this.addComponent(new Polygon(), {fillStyle: "red", points:Assets.alienBoss})
+        this.addComponent(new EnemyController())
+        this.transform.scale = new Vector2 (2, 2)
     }
 }
 

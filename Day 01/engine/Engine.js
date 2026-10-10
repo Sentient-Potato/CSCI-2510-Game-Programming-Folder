@@ -15,6 +15,10 @@ class Engine{
         addEventListener("keydown", Input.keydown)
         //keyboard stalker 2
         addEventListener("keyup", Input.keyup)
+        //mouse stalker
+        addEventListener("mousedown", Input.mousedown)
+        //mouse stalker 2
+        addEventListener("mouseup", Input.mouseup)
 
         SceneManager.nextScene = nextScene
 
@@ -33,6 +37,8 @@ class Engine{
         Engine.draw()
 
         Time.update()
+
+        Input.update()
 
         //...then call the game loop again the next time the browser refresh
         requestAnimationFrame(Engine.gameLoop)

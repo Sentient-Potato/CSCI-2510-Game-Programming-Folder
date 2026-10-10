@@ -9,22 +9,15 @@ class Polygon extends Component{
         ctx.save()
 
         //Set center of our object (Prof note)
-        ctx.translate(this.transform.position.x, this.transform.position.y)
-        ctx.scale(this.transform.scale.x, this.transform.scale.y)
-        ctx.rotate(this.transform.rotation)
+        // ctx.translate(this.transform.position.x, this.transform.position.y)
+        // ctx.scale(this.transform.scale.x, this.transform.scale.y)
+        // ctx.rotate(this.transform.rotation)
 
         ctx.beginPath()
 
         for(const point of this.points){
             ctx.lineTo(point.x, point.y)
         }
-
-        // ctx.lineTo(0,-5)
-        // ctx.lineTo(15,-20)
-        // ctx.lineTo(30,10)
-        // ctx.lineTo(0,50)
-        // ctx.lineTo(-30,10)
-        // ctx.lineTo(-15,-20)
 
         ctx.fillStyle = this.fillStyle
         ctx.fill()

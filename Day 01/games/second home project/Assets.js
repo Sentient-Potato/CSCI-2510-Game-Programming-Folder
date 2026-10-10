@@ -66,4 +66,13 @@ class Assets {
         new Vector2(1920, 980),
         new Vector2(0, 980)
         ]
+
+    static enemyShip = [
+        new Vector2(0, 40),
+        new Vector2(60, 20),
+        new Vector2(45, 33),
+        new Vector2(60, 40),
+        new Vector2 (45, 47),
+        new Vector2(60, 60)
+    ]
 }

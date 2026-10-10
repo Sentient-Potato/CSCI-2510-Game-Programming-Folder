@@ -9,9 +9,9 @@ class TextLabel extends Component{
         ctx.save()
 
         //Set center of our object (Prof note)
-        ctx.translate(this.transform.position.x, this.transform.position.y)
-        ctx.scale(this.transform.scale.x, this.transform.scale.y)
-        ctx.rotate(this.transform.rotation)
+        // ctx.translate(this.transform.position.x, this.transform.position.y)
+        // ctx.scale(this.transform.scale.x, this.transform.scale.y)
+        // ctx.rotate(this.transform.rotation)
 
         ctx.fillStyle = this.fillStyle
         ctx.font = "28px sans serif"

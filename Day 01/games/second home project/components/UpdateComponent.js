@@ -20,7 +20,7 @@ class UpdateComponent extends Component {
         if(Input.keysDown.includes("ArrowDown") || Input.keysDown.includes("KeyS"))
             this.transform.position.y = this.gameObject.transform.position.y + Time.deltaTime*  this.speed
 
-        if(this.timeSinceLastLaser > 30){
+        if(this.timeSinceLastLaser > 30 && Input.keysDown.includes("Space")){
             this.timeSinceLastLaser = 0
             let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
             laserGameObject.getComponent(Polygon).fillStyle = "lime"
