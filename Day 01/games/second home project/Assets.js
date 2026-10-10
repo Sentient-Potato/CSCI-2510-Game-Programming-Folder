@@ -75,4 +75,11 @@ class Assets {
         new Vector2 (45, 47),
         new Vector2(60, 60)
     ]
+
+    static bossHealthBar = [
+        new Vector2(0, 0),
+        new Vector2(Globals.bossHealth, 0),
+        new Vector2(Globals.bossHealth, 25),
+        new Vector2(0, 25)
+    ]
 }
