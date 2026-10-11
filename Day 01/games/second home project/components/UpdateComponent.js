@@ -1,5 +1,6 @@
 class UpdateComponent extends Component {
     speed = 200
+    canMove = true
     
     start() {
         this.timeSinceLastLaser = 0
@@ -7,7 +8,7 @@ class UpdateComponent extends Component {
 
     update() {
         this.timeSinceLastLaser += 1
-        
+
         if(Input.keysDown.includes("ArrowRight") || Input.keysDown.includes("KeyD"))
             this.transform.position.x = this.gameObject.transform.position.x + Time.deltaTime * this.speed
 
@@ -25,6 +26,17 @@ class UpdateComponent extends Component {
             let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
             laserGameObject.getComponent(Polygon).fillStyle = "lime"
         }
+
+        if (this.gameObject.transform.position.y <= 0)
+            this.gameObject.transform.position.y = 0
+        if (this.gameObject.transform.position.y >= Globals.maxYcoordinate - 40)
+            this.gameObject.transform.position.y = Globals.maxYcoordinate - 40
+
+        if (this.gameObject.transform.position.x <= 0)
+            this.gameObject.transform.position.x = 0
+        if (this.gameObject.transform.position.x >= Globals.maxXcoordinate - 300)
+            this.gameObject.transform.position.x = Globals.maxXcoordinate - 300
+        
 
         Camera.main.transform.position = this.transform.position.clone()
 

@@ -14,13 +14,8 @@ Planned:
 - Player death
 - Level attributes to alter game difficulty
 - Starting menu GUI
-- Power-ups that players can pick up and use
-
-
-
-Maybe?:
-- Charge gauge/counter that increases for each hit on boss. Allows user to temporarily shoot stronger lasers until gauge is empty
-- Boss shoots missiles that aim at player
+- Power-ups that players can pick up and use (one at a time)
+- Better collision for lasers and boss
 
 
 
@@ -32,5 +27,31 @@ Level attributes:
 - Slower player ship
 - Slower player lasers
 - Extra enemy lasers
-- BULLET HELL LASERS
 
+
+
+Power-Ups:
+- Faster ship
+- Faster lasers
+- Extra laser damage
+- Healing
+- Extra (double/triple/quadruple) lasers
+- Freeze enemies
+- 2x points
+- "Superstar" mode (Invicible + faster ship/lasers + extra damage)
+
+
+
+Maybe?:
+- Charge gauge/counter that increases for each hit on boss. Allows user to temporarily shoot stronger lasers until gauge is empty
+- Boss shoots missiles that aim at player
+- Custom ship and laser color selector
+- Different types of minions
+- Overlapping with boss causes massive damage
+- Allow for ship to rotate with up or down keys, which also alters the laser trajectory???
+- Allow power-ups to stack instead of one at a time
+- Power-up: Smaller lasers, LESS damage, fires MUCH faster
+- Power-up: Larger lasers, EXTRA damage, fires MUCH Slower
+- Randomize level attributes (Need more level attributes for this)
+- Boss "charging" attack
+- BULLET HELL MODE!!!
