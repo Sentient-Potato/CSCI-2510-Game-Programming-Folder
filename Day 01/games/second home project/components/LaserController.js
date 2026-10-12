@@ -6,7 +6,7 @@ class LaserController extends Component{
     update(){
         this.transform.position.x += Time.deltaTime * this.speed * this.direction
 
-        if(this.transform.position.x > Globals.maxXcoordinate || this.transform.position.x < 0){
+        if(this.transform.position.x > Globals.maxXcoordinate || this.transform.position.x < 90){
             this.gameObject.destroy()
         }
 
@@ -21,13 +21,13 @@ class LaserController extends Component{
             if (distance < 90) {
                 this.gameObject.destroy()
 
-                let healthComponent = enemyGameObject.getComponent(Health)
-                healthComponent.health --
-
-                let gameObjects = GameObject.findGameObjectByType(Transform)
-                for (const gameObject of gameObjects)
-                    gameObject.broadcastMessage("updatePoints", [1])
-
+                if (this.targetTag == "Enemy") {
+                    let healthComponent = enemyGameObject.getComponent(Health)
+                    healthComponent.health --
+                    let gameObjects = GameObject.findGameObjectByType(Transform)
+                    for (const gameObject of gameObjects)
+                        gameObject.broadcastMessage("updatePoints", [1])
+                }
             }
         }
     }

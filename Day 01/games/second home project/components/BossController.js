@@ -1,6 +1,13 @@
 class BossController extends Component {
     direction = 1
 
+    topLaserTimer = 0
+    bottomLaserTimer = 0
+
+    topLaserInterval = 1
+    bottomLaserInterval = 1
+
+
     update() {
         this.transform.position.y += Time.deltaTime * 100 * this.direction
         if (this.transform.position.y > Globals.maxYcoordinate-400) 
@@ -12,24 +19,34 @@ class BossController extends Component {
         if (this.gameObject.getComponent(Health).health <= 0) 
             this.gameObject.destroy()
 
+        this.topLaserTimer += Time.deltaTime
+        this.bottomLaserTimer += Time.deltaTime
+        
+        if (this.topLaserTimer >= this.topLaserInterval) {
+            this.topLaserTimer = 0
+            this.fireLaser(75)
+
+            this.topLaserInterval = Math.random() * 1.6 + 0.1
+        }
+        if (this.bottomLaserTimer >= this.bottomLaserInterval) {
+            this.bottomLaserTimer = 0
+            this.fireLaser(375)
+
+            this.bottomLaserInterval = Math.random() * 3 + 0.1
+        }
+
+    }
+
+    fireLaser(addYPosition) {
+        let bossLaser = new LaserGameObject(-1, "MainShip", 200)
+
+        bossLaser.transform.scale = new Vector2(0.75, 0.5)
+
+        let bossPosition = this.transform.position
+
+        instantiate(bossLaser, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition), Math.PI)
+
+        bossLaser.getComponent(Polygon).fillStyle = "red"
+
     }
 }
-
-
-
-// class EnemyController extends Component{
-//     direction = 1
-
-//     update(){
-//         this.transform.position.x += Time.deltaTime * 70 * this.direction
-//         if(this.transform.position.x > 400){
-//             this.direction = -1
-//         }
-//         if(this.transform.position.x < 75)
-//             this.direction = 1
-        
-//         if(this.gameObject.getComponent(Health).health <= 0){
-//             this.gameObject.destroy()
-//         }
-//     }
-// }

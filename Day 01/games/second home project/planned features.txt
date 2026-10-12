@@ -7,6 +7,7 @@ Done:
 
 Planned:
 - Display player health on UI (Somewhat implemented. No functionality yet until enemy lasers have been coded)
+- Figure out how to optimize health/heart UI code
 - Boss health bar on UI
 - Boss shoots lasers
 - Boss summons "minions" that shoot lasers and move randomly
