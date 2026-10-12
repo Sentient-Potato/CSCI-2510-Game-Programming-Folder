@@ -4,6 +4,6 @@ class PlayerHealthPercentageController extends Component {
     }
 
     updateHealth(delta) {
-        Globals.points -= delta
+        Globals.playerHealth -= delta
     }
 }

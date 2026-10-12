@@ -19,6 +19,8 @@ class Engine{
         addEventListener("mousedown", Input.mousedown)
         //mouse stalker 2
         addEventListener("mouseup", Input.mouseup)
+        //mouse stalker 3
+        addEventListener("mousemove", Input.mousemove)
 
         SceneManager.nextScene = nextScene
 

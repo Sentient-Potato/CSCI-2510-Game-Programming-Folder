@@ -7,6 +7,8 @@ class BossController extends Component {
     topLaserInterval = 1
     bottomLaserInterval = 1
 
+    summonMinionTimer = 0
+    summonMinionInterval = 4
 
     update() {
         this.transform.position.y += Time.deltaTime * 100 * this.direction
@@ -25,28 +27,39 @@ class BossController extends Component {
         if (this.topLaserTimer >= this.topLaserInterval) {
             this.topLaserTimer = 0
             this.fireLaser(75)
-
             this.topLaserInterval = Math.random() * 1.6 + 0.1
         }
         if (this.bottomLaserTimer >= this.bottomLaserInterval) {
             this.bottomLaserTimer = 0
             this.fireLaser(375)
-
             this.bottomLaserInterval = Math.random() * 3 + 0.1
         }
 
+        this.summonMinionTimer += Time.deltaTime
+        if (this.summonMinionTimer >= this.summonMinionInterval) {
+            this.summonMinionTimer = 0
+            let randomYPosition = Math.random() * 300 + 75
+            let randomSpeed = Math.random() * 120 + 120
+            this.summonEnemyShip(randomYPosition, randomSpeed)
+            this.summonMinionInterval = Math.random() * 4 + 1
+
+        }
+
+
+
+    }
+    // Maybe able to turn enemy lasers into its own component???
+    fireLaser(addYPosition) {
+        let bossLaser = new LaserGameObject(-1, "MainShip", 200, 1)
+        bossLaser.transform.scale = new Vector2(0.75, 0.5)
+        let bossPosition = this.transform.position
+        instantiate(bossLaser, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition), Math.PI)
+        bossLaser.getComponent(Polygon).fillStyle = "red"
     }
 
-    fireLaser(addYPosition) {
-        let bossLaser = new LaserGameObject(-1, "MainShip", 200)
-
-        bossLaser.transform.scale = new Vector2(0.75, 0.5)
-
+    summonEnemyShip(addYPosition, enemySpeed) {
+        let minion = new EnemyShipGameObject(-1, enemySpeed)
         let bossPosition = this.transform.position
-
-        instantiate(bossLaser, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition), Math.PI)
-
-        bossLaser.getComponent(Polygon).fillStyle = "red"
-
+        instantiate(minion, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition))
     }
 }

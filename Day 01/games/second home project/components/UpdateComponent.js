@@ -40,5 +40,9 @@ class UpdateComponent extends Component {
 
         Camera.main.transform.position = this.transform.position.clone()
 
+        if(this.gameObject.getComponent(Health).health <= 0){
+            this.gameObject.destroy()
+        }
+
     }
 }

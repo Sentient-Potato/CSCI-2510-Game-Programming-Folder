@@ -1,8 +1,18 @@
 class EnemyShipGameObject extends GameObject {
-    constructor() {
+    constructor(xDirection = 1, speed = 120) {
         super("Enemy", ["Enemy"], "ships")
+        let enemyController = new EnemyController()
+        enemyController.xDirection = xDirection
+        enemyController.speed = speed
         this.addComponent(new Polygon(), {fillStyle: "darkRed", points:Assets.enemyShip})
-        this.addComponent(new EnemyController())
-        this.addComponent(new Health(), {health: 2})
+        this.addComponent(enemyController)
+        this.addComponent(new Health(), {health: 3})
     }
 }
+
+/*
+let laserController = new LaserController()
+        laserController.direction = direction
+        laserController.targetTag = targetTag
+        laserController.speed = speed
+*/

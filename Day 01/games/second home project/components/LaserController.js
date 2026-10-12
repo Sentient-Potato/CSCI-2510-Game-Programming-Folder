@@ -2,6 +2,7 @@ class LaserController extends Component{
     direction = 1
     speed = 120
     targetTag = "Enemy"
+    damage = 1
 
     update(){
         this.transform.position.x += Time.deltaTime * this.speed * this.direction
@@ -23,15 +24,24 @@ class LaserController extends Component{
 
                 if (this.targetTag == "Enemy") {
                     let healthComponent = enemyGameObject.getComponent(Health)
-                    healthComponent.health --
+                    healthComponent.health -= this.damage
                     let gameObjects = GameObject.findGameObjectByType(Transform)
                     for (const gameObject of gameObjects)
                         gameObject.broadcastMessage("updatePoints", [1])
+                }
+
+                if (this.targetTag == "MainShip") {
+                    let healthComponent = enemyGameObject.getComponent(Health)
+                    healthComponent.health -= this.damage
+                    let gameObjects = GameObject.findGameObjectByType(Transform)
+                    for (const gameObject of gameObjects)
+                        gameObject.broadcastMessage("updateHealth", [this.damage])
                 }
             }
         }
     }
 }
+// I was trying to copy it, but change the tag to "MainShip"
 
 /*
 
