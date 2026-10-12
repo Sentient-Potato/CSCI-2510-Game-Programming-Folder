@@ -2,11 +2,11 @@ A text file of features to add to this game.
 
 Done:
 - Hold spacebar to shoot lasers
+- Stop the player from moving off the "game area"
 
 
 Planned:
-- Stop the player from moving off the "game area"
-- Display player health on UI
+- Display player health on UI (Somewhat implemented. No functionality yet until enemy lasers have been coded)
 - Boss health bar on UI
 - Boss shoots lasers
 - Boss summons "minions" that shoot lasers and move randomly

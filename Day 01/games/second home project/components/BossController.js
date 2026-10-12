@@ -11,6 +11,7 @@ class BossController extends Component {
 
         if (this.gameObject.getComponent(Health).health <= 0) 
             this.gameObject.destroy()
+
     }
 }
 

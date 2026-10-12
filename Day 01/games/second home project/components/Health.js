@@ -1,8 +1,17 @@
 class Health extends Component{
     health = 1
-
-    // updateBossHealth(delta) {
-    //     Globals.boss_health -= delta
-    // }
+    
 }
 
+/*
+class PointsController extends Component {
+    update() {
+        this.gameObject.getComponent(TextLabel).text = Globals.points + " points"
+    }
+
+    updatePoints(delta) {
+        Globals.points += delta
+    }
+}
+
+*/

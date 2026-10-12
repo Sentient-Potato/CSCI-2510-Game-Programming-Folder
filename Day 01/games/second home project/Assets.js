@@ -7,10 +7,10 @@ class Assets {
     ]
 
     static laser = [
-        new Vector2(25, 35),
-        new Vector2(85, 40),
-        new Vector2(25, 45),
-        new Vector2(40, 40)
+        new Vector2(65, 35),
+        new Vector2(125, 40),
+        new Vector2(65, 45),
+        new Vector2(80, 40)
     ]
 
     static alienBoss = [
@@ -81,5 +81,16 @@ class Assets {
         new Vector2(Globals.bossHealth, 0),
         new Vector2(Globals.bossHealth, 25),
         new Vector2(0, 25)
+    ]
+
+    static heart = [
+        new Vector2(0, 20),
+        new Vector2(25, 0),
+        new Vector2(50, 20),
+        new Vector2(75, 0),
+        new Vector2(100, 20),
+        new Vector2(90, 55),
+        new Vector2(50, 90),
+        new Vector2(10, 55)
     ]
 }

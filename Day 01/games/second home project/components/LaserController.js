@@ -1,13 +1,17 @@
 class LaserController extends Component{
-    update(){
-        this.transform.position.x += Time.deltaTime * 120
+    direction = 1
+    speed = 120
+    targetTag = "Enemy"
 
-        if(this.transform.position.x > Globals.maxXcoordinate){
+    update(){
+        this.transform.position.x += Time.deltaTime * this.speed * this.direction
+
+        if(this.transform.position.x > Globals.maxXcoordinate || this.transform.position.x < 0){
             this.gameObject.destroy()
         }
 
         let myPosition = this.transform.position
-        let enemyGameObjects = GameObject.findGameObjectsWithTag("Enemy")
+        let enemyGameObjects = GameObject.findGameObjectsWithTag(this.targetTag)
 
         for (const enemyGameObject of enemyGameObjects) {
             let enemyPosition = enemyGameObject.transform.position
@@ -26,25 +30,14 @@ class LaserController extends Component{
 
             }
         }
-        // Collision check
-        // let myPosition = this.transform.position
-        // let enemyGameObjects = GameObject.findGameObjectsWithTag("Enemy")
-
-        // for (const enemyGameObject of enemyGameObjects){
-        //     let enemyPosition = enemyGameObject.transform.position
-        //     let distance = myPosition.minus(enemyPosition).magnitude
-
-        //     if(distance < 20){
-        //         this.gameObject.destroy()
-        //         // enemyGameObject.destroy()
-        //         let healthComponent = enemyGameObject.getComponent(Health)
-        //         healthComponent.health --
-        //         //Globals.points ++
-        //         let gameObjects = GameObject.findGameObjectByType(Transform)
-        //         for (const gameObject of gameObjects) {
-        //             gameObject.broadcastMessage("updatePoints", [1])
-        //         }
-        //     }
-        // }
     }
 }
+
+/*
+
+if(this.timeSinceLastLaser > 30 && Input.keysDown.includes("Space")){
+            this.timeSinceLastLaser = 0
+            let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
+            laserGameObject.getComponent(Polygon).fillStyle = "lime"
+        }
+*/
