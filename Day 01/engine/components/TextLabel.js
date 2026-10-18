@@ -1,6 +1,8 @@
 class TextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
+    font = "10px arial"
+    alignItems = "center"
 
     draw(ctx) {
         //let position = this.transform.position
@@ -14,7 +16,8 @@ class TextLabel extends Component{
         // ctx.rotate(this.transform.rotation)
 
         ctx.fillStyle = this.fillStyle
-        ctx.font = "28px sans serif"
+        ctx.font = this.font
+        ctx.alignItems = this.alignItems
 
         ctx.fillText(this.text, 0, 0)
 

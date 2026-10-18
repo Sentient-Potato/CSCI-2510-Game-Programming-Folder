@@ -9,9 +9,10 @@ class GenericLevel extends Scene {
         helperGameObject.transform.setParent(mainGameObject.transform)
         //this.instantiate(new SceneTimerGameObject(), new Vector2(10, 80))
 
+        /*
         let wrappedText = new GameObject("WrappedText", [], "UI")
-        wrappedText.addComponent(new MultiLineTextLabel(), {fillStyle: "pink", text: "Random words are being put here. Abababababab. Words are here. This is for a test, yahoo, yay! Wee woo. Obtused rubber goose.", font: "30px"})
-        this.instantiate(wrappedText, new Vector2(10, 0))
-
+        wrappedText.addComponent(new MultiLineTextLabel(), {fillStyle:"gray", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", font:"30px Times"})
+        this.instantiate(wrappedText, new Vector2(0, 100))
+        */
     }
 }

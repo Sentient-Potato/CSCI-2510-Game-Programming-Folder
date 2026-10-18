@@ -24,6 +24,7 @@
         <script src = "../../engine/SceneManager.js"></script>
         <script src = "../../engine/Time.js"></script>
         <script src = "../../engine/Vector2.js"></script>
+        <script src = "../../engine/Collisions.js"></script>
 
         <script src = "../../engine/components/Camera.js"></script>
         <script src = "../../engine/components/MultiLineTextLabel.js"></script>
@@ -58,6 +59,20 @@
         <script>
 
             Engine.start(Level01, Settings)
+
+            // Collision tests
+            let testingGameObject = new GameObject()
+            testingGameObject.addComponent(new Polygon(), {points: [
+                new Vector2(0, -1),
+                new Vector2(-1, 1),
+                new Vector2(1, 1),
+            ]})
+            console.assert(Collisions.isCollisionPointPolygon(new Vector2(0, 0), testingGameObject))
+            console.assert(Collisions.isCollisionPointPolygon(new Vector2(0, 0.999), testingGameObject))
+
+            console.assert(!Collisions.isCollisionPointPolygon(new Vector2(10000, 10000), testingGameObject))
+            console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0, 1.1), testingGameObject))
+            console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0, -1.00001), testingGameObject))
             
         </script>
     </body>

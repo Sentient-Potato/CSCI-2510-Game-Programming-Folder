@@ -1,33 +1,68 @@
-A text file of features to add to this game.
+A text file of features to add to this game or improvements needed to be worked on. 
+Also some reminders to implement after class work
+
+[!][!][!]
+~ ADD COLLISION SCRIPT SOURCE IN HTML!
+~ FIX MULTILINE TEXT LABEL
+[!][!][!]
 
 Done:
 - Hold spacebar to shoot lasers
 - Stop the player from moving off the "game area"
-
-
-Planned:
-- Display player health on UI (Somewhat implemented. No functionality yet until enemy lasers have been coded)
-- Figure out how to optimize health/heart UI code
-- Boss health bar on UI
+- Display player health on UI and updates
 - Boss shoots lasers
-- Boss summons "minions" that shoot lasers and move randomly
+- Boss summons "minions" that move randomly up and down and causes collision damage, no lasers yet
+
+
+Planned Features:
+- Boss health bar on UI
+- Minions can fire lasers
+- Change so that boss defaults to firing 1 set of lasers
 - Extra points when destroying minion ships
-- Player death
+- Player death (Ship gets destroyed. No game over screen)
 - Level attributes to alter game difficulty
 - Starting menu GUI
-- Power-ups that players can pick up and use (one at a time)
-- Better collision for lasers and boss
+- Power-ups that players can pick up and use (one at a time). They can spawn randomly on the map OR be dropped by destroyed minions randomly
+- Power-up inventory that displays the held power-up. Player presses specific key to use the item. 
+- Power-ups will not be picked up if player already has a power-up in inventory
+- Power-ups despawn after elapsed time
+- Colliding lasers destroy each other (Does not delete ally lasers)
+- Change/simplify boss design
+- Pause menu when ESC is pressed
+- "Demo Mode" with a few levels showcasing the game
+
+
+
+Improvements:
+- Change enemy laser code into its own file for later attribute coding
+- Figure out how to optimize health/heart UI code.
+- Maybe put playerhealthcontroller into Health.js
+- Rename playerhealthgameobject and playerheartgameobject to be more different names
+- Better collision for lasers and boss (Waiting for class work)
+
+
+
+Advanced Features (Add AFTER base game is done):
+- "Infinite Mode" unlocked AFTER a few "campaign" levels have been completed. Randomized level attributes 
+- "Achievements" maybe...
+- "Story Mode" A campaign of levels with all attributes slowly added and a rough story. Also introduces features and controls
 
 
 
 Level attributes:
 - Extra enemy health (scaled)
-- Extra enemy damage (scaled)
-- Faster enemy lasers
+- Extra enemy laser damage (scaled)
+- Extra enemy collision damage (scaled)
+- Faster enemy laser speed
+- Smaller enemy laser intervals
+- Smaller minion spawning intervals
 - Faster enemies
 - Slower player ship
-- Slower player lasers
+- Slower player laser speed
 - Extra enemy lasers
+- Boss fires extra sets of lasers (max of 3, maybe 5?)
+- No power-ups or 1 power-up for the level
+- Power-ups can be destroyed by enemy collision
 
 
 
@@ -36,8 +71,9 @@ Power-Ups:
 - Faster lasers
 - Extra laser damage
 - Healing
-- Extra (double/triple/quadruple) lasers
+- Extra (double/triple) lasers
 - Freeze enemies
+- Forcefield shield (absorbs hit, does not affect main health. Like TEMP HP in D&D, does not stack)
 - 2x points
 - "Superstar" mode (Invicible + faster ship/lasers + extra damage)
 
@@ -46,13 +82,23 @@ Power-Ups:
 Maybe?:
 - Charge gauge/counter that increases for each hit on boss. Allows user to temporarily shoot stronger lasers until gauge is empty
 - Boss shoots missiles that aim at player
+- Points decrement upon hit?
 - Custom ship and laser color selector
 - Different types of minions
-- Overlapping with boss causes massive damage
+- If adding different types of minions, turn "summonMinion" function into its own component file
 - Allow for ship to rotate with up or down keys, which also alters the laser trajectory???
 - Allow power-ups to stack instead of one at a time
 - Power-up: Smaller lasers, LESS damage, fires MUCH faster
 - Power-up: Larger lasers, EXTRA damage, fires MUCH Slower
-- Randomize level attributes (Need more level attributes for this)
+- Power-up: Summon backup ship? If summon backup ship, allow collision for both enemy and ally to cause damage?
+- If adding backup ship, allow fleets? (Multiple back up ship that uses parent/child relationship to move together)
+- Level Attribute: Power-ups can also be destroyed by boss lasers (Add health component for power-up)
 - Boss "charging" attack
 - BULLET HELL MODE!!!
+- 1 HP Mode bcz fck the player ig?
+- Absolute hell on Earth, let player rotate their ship with A+D to aim and turn
+
+
+
+Other To-Do:
+- Maybe make a simple game/program to create points and shapes then save the coordinates
