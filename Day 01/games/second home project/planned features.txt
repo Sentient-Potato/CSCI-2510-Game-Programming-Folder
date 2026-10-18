@@ -12,11 +12,11 @@ Done:
 - Display player health on UI and updates
 - Boss shoots lasers
 - Boss summons "minions" that move randomly up and down and causes collision damage, no lasers yet
+- Minions can fire lasers
 
 
 Planned Features:
 - Boss health bar on UI
-- Minions can fire lasers
 - Change so that boss defaults to firing 1 set of lasers
 - Extra points when destroying minion ships
 - Player death (Ship gets destroyed. No game over screen)

@@ -1,21 +1,12 @@
 class BossGameObject extends GameObject {
-    constructor() {
+    constructor(laserTier = 1) {
         super("Boss", ["Boss", "Enemy"], "boss")
+        let bossController = new BossController()
+        bossController.laserTier = laserTier
+        
         this.addComponent(new Polygon(), {fillStyle: "red", points:Assets.alienBoss})
-        this.addComponent(new BossController())
+        this.addComponent(bossController)
         this.transform.scale = new Vector2 (2, 2)
         this.addComponent(new Health(), {health: Globals.bossHealth})
     }
 }
-
-
-
-
-// class EnemyGameObject extends GameObject{
-//     constructor(){
-//         super("Enemy", ["Enemy"], "ships")
-//         this.addComponent(new Polygon(), {fillStyle: "seagreen", points:Assets.shape})
-//         this.addComponent(new EnemyController())
-//         this.addComponent(new Health(), {health: 2})
-//     }
-// }
