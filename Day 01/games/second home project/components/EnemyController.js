@@ -9,6 +9,9 @@ class EnemyController extends Component{
     ySpeed = Math.random() * 180 + 20
     yDirection = Math.random() < 0.5 ? 1 : -1
 
+    laserTimer = 0
+    laserInterval = 1
+
     update(){
         this.transform.position.x += Time.deltaTime * this.speed * this.xDirection
 
@@ -23,7 +26,7 @@ class EnemyController extends Component{
         }
 
         this.transform.position.y += Time.deltaTime * this.ySpeed * this.yDirection
-
+        
         if(this.transform.position.x < 0 || this.transform.position.y < 0 || this.transform.position.y > Globals.maxYcoordinate - 60){
             this.gameObject.destroy()
         }
@@ -47,40 +50,23 @@ class EnemyController extends Component{
                 let gameObjects = GameObject.findGameObjectByType(Transform)
                 for (const gameObject of gameObjects) 
                 gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
-        }
             }
+        }
 
+        this.laserTimer += Time.deltaTime
+        if (this.laserTimer >= this.laserInterval) {
+            this.laserTimer = 0
+            this.fireLaser(50)
+            this.laserInterval = Math.random() * 1 + 0.5
+        }
+    }
 
+    fireLaser(addYPosition) {
+        let enemyLaser = new LaserGameObject(-1, "MainShip", 400, 1)
+        enemyLaser.transform.scale = new Vector2(0.5, 0.25)
+        let enemyPosition = this.transform.position
+        instantiate(enemyLaser, new Vector2(enemyPosition.x + 80, enemyPosition.y + addYPosition), Math.PI)
+        enemyLaser.getComponent(Polygon).fillStyle = "yellow"
     }
 }
 
-/*
-        let myPosition = this.transform.position
-        let enemyGameObjects = GameObject.findGameObjectsWithTag(this.targetTag)
-
-        for (const enemyGameObject of enemyGameObjects) {
-            let enemyPosition = enemyGameObject.transform.position
-            let distance = myPosition.minus(enemyPosition).magnitude
-
-            // Collision check for now. Improve later.
-            if (distance < 90) {
-                this.gameObject.destroy()
-
-                if (this.targetTag == "Enemy") {
-                    let healthComponent = enemyGameObject.getComponent(Health)
-                    healthComponent.health -= this.damage
-                    let gameObjects = GameObject.findGameObjectByType(Transform)
-                    for (const gameObject of gameObjects)
-                        gameObject.broadcastMessage("updatePoints", [1])
-                }
-
-                if (this.targetTag == "MainShip") {
-                    let healthComponent = enemyGameObject.getComponent(Health)
-                    healthComponent.health -= this.damage
-                    let gameObjects = GameObject.findGameObjectByType(Transform)
-                    for (const gameObject of gameObjects)
-                        gameObject.broadcastMessage("updateHealth", [this.damage])
-                }
-            }
-        }
-*/
