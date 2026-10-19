@@ -1,9 +1,10 @@
 class EnemyLaserController extends Component {
+    // The default settings
     laserSpeed = 100
     laserDamage = 1
     laserXScale = 1
     laserYScale = 1
-    laserColor = "red"
+    laserColor = "magenta"
     addXPosition = 0
     addYPosition = 0
 
@@ -14,5 +15,4 @@ class EnemyLaserController extends Component {
         instantiate(enemyLaser, new Vector2(objectPosition.x + addXPosition, objectPosition.y + addYPosition), Math.PI)
         enemyLaser.getComponent(Polygon).fillStyle = laserColor
     }
-
 }

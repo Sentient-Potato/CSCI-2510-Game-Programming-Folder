@@ -66,14 +66,5 @@ class EnemyController extends Component{
         }
             
     }
-/*
-    fireLaser(addYPosition) {
-        let enemyLaser = new LaserGameObject(-1, "MainShip", 400, 1)
-        enemyLaser.transform.scale = new Vector2(0.5, 0.25)
-        let enemyPosition = this.transform.position
-        instantiate(enemyLaser, new Vector2(enemyPosition.x + 80, enemyPosition.y + addYPosition), Math.PI)
-        enemyLaser.getComponent(Polygon).fillStyle = "yellow"
-    }
-        */
 }
 
