@@ -6,13 +6,7 @@ class EnemyShipGameObject extends GameObject {
         enemyController.speed = speed
         this.addComponent(new Polygon(), {fillStyle: "darkRed", points:Assets.enemyShip})
         this.addComponent(enemyController)
+        //this.addComponent(new EnemyLaserController())
         this.addComponent(new Health(), {health: 3})
     }
 }
-
-/*
-let laserController = new LaserController()
-        laserController.direction = direction
-        laserController.targetTag = targetTag
-        laserController.speed = speed
-*/

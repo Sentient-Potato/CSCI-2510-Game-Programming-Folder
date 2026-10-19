@@ -13,6 +13,10 @@ class BossController extends Component {
 
     summonMinionTimer = 0
     summonMinionInterval = 4
+    start() {
+        this.laserController = new EnemyLaserController()
+        this.gameObject.addComponent(this.laserController)
+    }
 
     update() {
         this.transform.position.y += Time.deltaTime * 100 * this.direction
@@ -30,7 +34,7 @@ class BossController extends Component {
 
             if (this.middleLaserTimer >= this.middleLaserInterval) {
                 this.middleLaserTimer = 0
-                this.fireLaser(225)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 225)
                 this.middleLaserInterval = Math.random() * 3 + 0.1
             }
         }
@@ -41,12 +45,12 @@ class BossController extends Component {
         
             if (this.topLaserTimer >= this.topLaserInterval) {
                 this.topLaserTimer = 0
-                this.fireLaser(75)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 75)
                 this.topLaserInterval = Math.random() * 1.6 + 0.1
             }
             if (this.bottomLaserTimer >= this.bottomLaserInterval) {
                 this.bottomLaserTimer = 0
-                this.fireLaser(375)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 375)
                 this.bottomLaserInterval = Math.random() * 3 + 0.1
             }
         }
@@ -58,19 +62,19 @@ class BossController extends Component {
         
             if (this.topLaserTimer >= this.topLaserInterval) {
                 this.topLaserTimer = 0
-                this.fireLaser(75)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 75)
                 this.topLaserInterval = Math.random() * 1.6 + 0.1
             }
 
             if (this.middleLaserTimer >= this.middleLaserInterval) {
                 this.middleLaserTimer = 0
-                this.fireLaser(225)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 225)
                 this.middleLaserInterval = Math.random() * 3 + 0.1
             }
 
             if (this.bottomLaserTimer >= this.bottomLaserInterval) {
                 this.bottomLaserTimer = 0
-                this.fireLaser(375)
+                this.laserController.fireLaser(200, 1, 0.75, 0.5, "red", 100, 375)
                 this.bottomLaserInterval = Math.random() * 3 + 0.1
             }
         }
@@ -86,14 +90,6 @@ class BossController extends Component {
 
 
 
-    }
-    // Maybe able to turn enemy lasers into its own component???
-    fireLaser(addYPosition) {
-        let bossLaser = new LaserGameObject(-1, "MainShip", 200, 1)
-        bossLaser.transform.scale = new Vector2(0.75, 0.5)
-        let bossPosition = this.transform.position
-        instantiate(bossLaser, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition), Math.PI)
-        bossLaser.getComponent(Polygon).fillStyle = "red"
     }
 
     summonEnemyShip(addYPosition, enemySpeed) {

@@ -12,6 +12,11 @@ class EnemyController extends Component{
     laserTimer = 0
     laserInterval = 1
 
+    start() {
+        this.laserController = new EnemyLaserController()
+        this.gameObject.addComponent(this.laserController)
+    }
+
     update(){
         this.transform.position.x += Time.deltaTime * this.speed * this.xDirection
 
@@ -56,11 +61,12 @@ class EnemyController extends Component{
         this.laserTimer += Time.deltaTime
         if (this.laserTimer >= this.laserInterval) {
             this.laserTimer = 0
-            this.fireLaser(50)
+            this.laserController.fireLaser(300, 1, 0.5, 0.25, "yellow", 80, 50)
             this.laserInterval = Math.random() * 1 + 0.5
         }
+            
     }
-
+/*
     fireLaser(addYPosition) {
         let enemyLaser = new LaserGameObject(-1, "MainShip", 400, 1)
         enemyLaser.transform.scale = new Vector2(0.5, 0.25)
@@ -68,5 +74,6 @@ class EnemyController extends Component{
         instantiate(enemyLaser, new Vector2(enemyPosition.x + 80, enemyPosition.y + addYPosition), Math.PI)
         enemyLaser.getComponent(Polygon).fillStyle = "yellow"
     }
+        */
 }
 
