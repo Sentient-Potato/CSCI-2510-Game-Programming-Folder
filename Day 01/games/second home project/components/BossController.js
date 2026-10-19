@@ -13,21 +13,22 @@ class BossController extends Component {
 
     summonMinionTimer = 0
     summonMinionInterval = 4
+
     start() {
         this.laserController = new EnemyLaserController()
         this.gameObject.addComponent(this.laserController)
     }
 
     update() {
+        if(this.gameObject.getComponent(Health).health <= 0)
+            this.gameObject.destroy()
+        
         this.transform.position.y += Time.deltaTime * 100 * this.direction
         if (this.transform.position.y > Globals.maxYcoordinate-400) 
             this.direction = -1
 
         if (this.transform.position.y < 0)
             this.direction = 1
-
-        if (this.gameObject.getComponent(Health).health <= 0) 
-            this.gameObject.destroy()
 
         if (this.laserTier == 1) {
             this.middleLaserTimer += Time.deltaTime
@@ -87,9 +88,6 @@ class BossController extends Component {
             this.summonEnemyShip(randomYPosition, randomSpeed)
             this.summonMinionInterval = Math.random() * 4 + 1
         }
-
-
-
     }
 
     summonEnemyShip(addYPosition, enemySpeed) {

@@ -38,6 +38,11 @@ class EnemyController extends Component{
 
         if(this.gameObject.getComponent(Health).health <= 0){
             this.gameObject.destroy()
+
+            let pointObjects = GameObject.findGameObjectByType(Transform)
+                for (const pointObject of pointObjects) {
+                    pointObject.broadcastMessage("updatePoints", [5])
+                }
         }
 
         let currentPosition = this.transform.position
