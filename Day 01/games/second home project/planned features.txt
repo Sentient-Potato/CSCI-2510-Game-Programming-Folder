@@ -14,11 +14,11 @@ Done:
 - Boss summons "minions" that move randomly up and down and causes collision damage, no lasers yet
 - Minions can fire lasers
 - Boss will default to firing 1 set of lasers if not specified
+- Extra points when destroying minion ships
 
 
 Planned Features:
 - Boss health bar on UI
-- Extra points when destroying minion ships
 - Player death (Ship gets destroyed. No game over screen)
 - Level attributes to alter game difficulty
 - Starting menu GUI
@@ -72,7 +72,6 @@ Power-Ups:
 - Extra laser damage
 - Healing
 - Extra (double/triple) lasers
-- Freeze enemies
 - Forcefield shield (absorbs hit, does not affect main health. Like TEMP HP in D&D, does not stack)
 - 2x points
 - "Superstar" mode (Invicible + faster ship/lasers + extra damage)
@@ -91,6 +90,7 @@ Maybe?:
 - Power-up: Smaller lasers, LESS damage, fires MUCH faster
 - Power-up: Larger lasers, EXTRA damage, fires MUCH Slower
 - Power-up: Summon backup ship? If summon backup ship, allow collision for both enemy and ally to cause damage?
+- Power-up: Freeze enemies
 - If adding backup ship, allow fleets? (Multiple back up ship that uses parent/child relationship to move together)
 - Level Attribute: Power-ups can also be destroyed by boss lasers (Add health component for power-up)
 - Boss "charging" attack

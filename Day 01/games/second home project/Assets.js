@@ -93,4 +93,54 @@ class Assets {
         new Vector2(50, 90),
         new Vector2(10, 55)
     ]
+
+    static speedArrow = [
+        new Vector2 (0, 0),
+        new Vector2 (30, 20),
+        new Vector2 (0, 40),
+        new Vector2 (0, 30),
+        new Vector2 (15, 20),
+        new Vector2 (0, 1)
+    ]
+
+    static cross = [
+        new Vector2(0, 10),
+        new Vector2(10, 10),
+        new Vector2(10, 0),
+        new Vector2(20, 0),
+        new Vector2(20, 10),
+        new Vector2(30, 10),
+        new Vector2(30, 20),
+        new Vector2(20, 20),
+        new Vector2(20, 30),
+        new Vector2(10, 30),
+        new Vector2(10, 20),
+        new Vector2(0, 20)
+    ]
+
+    static shield = [
+        new Vector2(0, 0),
+        new Vector2(10, 5),
+        new Vector2(25, 0),
+        new Vector2(40, 5),
+        new Vector2(50, 0),
+        new Vector2(50, 20),
+        new Vector2(45, 40),
+        new Vector2(25, 60),
+        new Vector2(5, 40),
+        new Vector2(0, 20)
+    ]
+
+    static star = [
+        new Vector2(0, 40),
+        new Vector2(40, 40),
+        new Vector2(60, 0),
+        new Vector2(80, 40),
+        new Vector2(120, 40),
+        new Vector2(90, 70),
+        new Vector2(100, 110),
+        new Vector2(60, 90),
+        new Vector2(20, 110),
+        new Vector2(30, 70)
+    ]
 }
