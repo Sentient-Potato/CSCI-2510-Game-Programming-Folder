@@ -17,6 +17,7 @@ Done:
 - Extra points when destroying minion ships
 
 
+
 Planned Features:
 - Boss health bar on UI
 - Player death (Ship gets destroyed. No game over screen)
@@ -30,6 +31,32 @@ Planned Features:
 - Change/simplify boss design
 - Pause menu when ESC is pressed
 - "Demo Mode" with a few levels showcasing the game
+
+
+
+Rough Plan:
+1. Finish making the UI.
+    a. Boss health bar
+    b. Power-Up inventory slot 
+    c. Have player and boss health bar subtract by percentage (To allow different values for boss/player health)
+2. Change code to allow attributes that can change when called
+3. Code ESC, ENTER/RETURN, and E button input in engine
+4. Pause feature
+    a. Create and code PauseGameController.js and PauseGameObject.js 
+        i. Have it start off by sending a console message
+    b. Sync the pause function and the ESC button
+    c. Create a text label "PAUSED". Maybe add a transparent screen over the game.
+    d. Go through each code and add a Boolean variable to indiciate if game is paused or not
+        i. Moving variables should have their speed saved
+        ii. Start by having the entities stop moving first before lasers
+5. Collision (If class lesson is finished. If finished, do this before anything else. Otherwise, contine)
+6. Power-Ups
+    a. Create PowerUpController.js and PowerUpGameObject.js
+    b. Create the different power-ups and their icons/game objects
+    c. Allow power-ups to spawn (3 on screen at once) periodically at fixed locations
+    d. Player and power-up collision.
+    e. Power-up appear in inventory
+    ehhhh, plan more when you get here...
 
 
 
