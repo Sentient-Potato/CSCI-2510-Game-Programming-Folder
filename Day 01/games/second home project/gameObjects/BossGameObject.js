@@ -8,5 +8,7 @@ class BossGameObject extends GameObject {
         this.addComponent(bossController)
         this.transform.scale = new Vector2 (2, 2)
         this.addComponent(new Health(), {health: Globals.bossHealth})
+
+        this.addComponent(new Collider())
     }
 }

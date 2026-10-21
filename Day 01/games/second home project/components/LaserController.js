@@ -10,7 +10,7 @@ class LaserController extends Component{
         if(this.transform.position.x > Globals.maxXcoordinate || this.transform.position.x < 90){
             this.gameObject.destroy()
         }
-
+/*
         let myPosition = this.transform.position
         let enemyGameObjects = GameObject.findGameObjectsWithTag(this.targetTag)
 
@@ -39,15 +39,32 @@ class LaserController extends Component{
                 }
             }
         }
+        */
+    }
+    onCollisionStay(other) {
+        if (!other.tags || !other.tags.includes(this.targetTag)) 
+            return
+        
+        let health = other.getComponent(Health)
+
+        if (health) 
+            health.health -= this.damage
+        
+        this.gameObject.destroy()
+
+        if (this.targetTag == "MainShip") {
+            let gameObjects = GameObject.findGameObjectByType(Transform)
+            for (const gameObject of gameObjects) {
+                gameObject.broadcastMessage("updateHealth", [this.damage])
+            }
+        }
+
+        if (this.targetTag == "Enemy") {
+            let gameObjects = GameObject.findGameObjectByType(Transform)
+            for (const gameObject of gameObjects) {
+                gameObject.broadcastMessage("updateHealth", [this.damage])
+                gameObject.broadcastMessage("updatePoints", [1])
+            }
+        }
     }
 }
-// I was trying to copy it, but change the tag to "MainShip"
-
-/*
-
-if(this.timeSinceLastLaser > 30 && Input.keysDown.includes("Space")){
-            this.timeSinceLastLaser = 0
-            let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
-            laserGameObject.getComponent(Polygon).fillStyle = "lime"
-        }
-*/

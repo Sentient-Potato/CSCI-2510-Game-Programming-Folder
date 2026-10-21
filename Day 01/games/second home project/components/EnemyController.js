@@ -45,23 +45,23 @@ class EnemyController extends Component{
                 }
         }
 
-        let currentPosition = this.transform.position
-        let playerGameObjects = GameObject.findGameObjectsWithTag("MainShip")
+        // let currentPosition = this.transform.position
+        // let playerGameObjects = GameObject.findGameObjectsWithTag("MainShip")
 
-        for (const playerGameObject of playerGameObjects) {
-            let playerPosition = playerGameObject.transform.position
-            let distance = currentPosition.minus(playerPosition).magnitude
+        // for (const playerGameObject of playerGameObjects) {
+        //     let playerPosition = playerGameObject.transform.position
+        //     let distance = currentPosition.minus(playerPosition).magnitude
 
-            if (distance < 30) {
-                this.gameObject.destroy()
+        //     if (distance < 30) {
+        //         this.gameObject.destroy()
 
-                let healthComponent = playerGameObject.getComponent(Health)
-                healthComponent.health -= this.shipCollisionDamage
-                let gameObjects = GameObject.findGameObjectByType(Transform)
-                for (const gameObject of gameObjects) 
-                gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
-            }
-        }
+        //         let healthComponent = playerGameObject.getComponent(Health)
+        //         healthComponent.health -= this.shipCollisionDamage
+        //         let gameObjects = GameObject.findGameObjectByType(Transform)
+        //         for (const gameObject of gameObjects) 
+        //         gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
+        //     }
+        // }
 
         this.laserTimer += Time.deltaTime
         if (this.laserTimer >= this.laserInterval) {
@@ -69,7 +69,22 @@ class EnemyController extends Component{
             this.laserController.fireLaser(300, 1, 0.5, 0.25, "yellow", 80, 50)
             this.laserInterval = Math.random() * 1 + 0.5
         }
-            
+    }
+
+    onCollisionStay(other) {
+        if (!other.tags.includes("MainShip"))
+            return
+
+        let health = other.getComponent(Health)
+
+        if (health)
+            health.health -= this.shipCollisionDamage
+
+        let gameObjects = GameObject.findGameObjectByType(Transform)
+        for (const gameObject of gameObjects) {
+            gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
+            this.gameObject.destroy()
+        }
     }
 }
 

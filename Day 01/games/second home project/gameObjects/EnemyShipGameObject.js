@@ -1,6 +1,6 @@
 class EnemyShipGameObject extends GameObject {
     constructor(xDirection = 1, speed = 120) {
-        super("Enemy", ["Enemy"], "ships")
+        super("Enemy", ["Enemy"], "enemyships")
         let enemyController = new EnemyController()
         enemyController.xDirection = xDirection
         enemyController.speed = speed
