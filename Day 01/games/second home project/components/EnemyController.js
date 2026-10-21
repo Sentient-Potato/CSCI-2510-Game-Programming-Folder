@@ -6,7 +6,7 @@ class EnemyController extends Component{
 
     yRandomTimer = 0
     yRandomInterval = Math.random() * 2 + 0.5
-    ySpeed = Math.random() * 180 + 20
+    ySpeed = Math.random() * 160 + 20
     yDirection = Math.random() < 0.5 ? 1 : -1
 
     laserTimer = 0
@@ -25,7 +25,7 @@ class EnemyController extends Component{
             this.yRandomTimer = 0
 
             this.yDirection = Math.random() < 0.5 ? 1 : -1
-            this.ySpeed = Math.random() * 180 + 20
+            this.ySpeed = Math.random() * 160 + 20
             
             this.yRandomInterval = Math.random() * 2 + 0.5
         }

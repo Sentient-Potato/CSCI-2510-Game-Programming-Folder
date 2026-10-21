@@ -2,6 +2,7 @@ class MultiLineTextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
     font = "10px arial"
+    maxWidth = 200
 
     draw(ctx) {
         //let position = this.transform.position

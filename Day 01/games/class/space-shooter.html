@@ -27,6 +27,7 @@
         <script src = "../../engine/Collisions.js"></script>
 
         <script src = "../../engine/components/Camera.js"></script>
+        <script src = "../../engine/components/Collider.js"></script>
         <script src = "../../engine/components/MultiLineTextLabel.js"></script>
         <script src = "../../engine/components/Polygon.js"></script>
         <script src = "../../engine/components/TextLabel.js"></script>
@@ -67,12 +68,24 @@
                 new Vector2(-1, 1),
                 new Vector2(1, 1),
             ]})
+
+            let two = new GameObject()
+            two.addComponent(new Polygon(), {points: [
+                new Vector2(0, -1),
+                new Vector2(-1, 1),
+                new Vector2(1, 1),
+            ]})
+
             console.assert(Collisions.isCollisionPointPolygon(new Vector2(0, 0), testingGameObject))
             console.assert(Collisions.isCollisionPointPolygon(new Vector2(0, 0.999), testingGameObject))
 
             console.assert(!Collisions.isCollisionPointPolygon(new Vector2(10000, 10000), testingGameObject))
             console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0, 1.1), testingGameObject))
             console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0, -1.00001), testingGameObject))
+
+            console.assert(Collisions.isCollisionPointPolygonPolygon(testingGameObject, two))
+            two.transform.position = new Vector2(1000, 1000)
+            console.assert(!Collisions.isCollisionPointPolygonPolygon(testingGameObject, two))
             
         </script>
     </body>

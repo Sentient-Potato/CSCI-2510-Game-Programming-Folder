@@ -150,4 +150,19 @@ class Assets {
         new Vector2(120, 120),
         new Vector2(0, 120)
     ]
+    // Not really rounded, but good enough
+    static roundedSquare = [
+        new Vector2(0, 40),
+        new Vector2(10, 10),
+        new Vector2(40, 0),
+        new Vector2(160, 0),
+        new Vector2(190, 10),
+        new Vector2(200, 40),
+        new Vector2(200, 160),
+        new Vector2(190, 190),
+        new Vector2(160, 200),
+        new Vector2(40, 200),
+        new Vector2(10, 190),
+        new Vector2(0, 160)
+    ]
 }

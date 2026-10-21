@@ -8,5 +8,6 @@ class EnemyShipGameObject extends GameObject {
         this.addComponent(enemyController)
         //this.addComponent(new EnemyLaserController())
         this.addComponent(new Health(), {health: 3})
+        this.addComponent(new Collider())
     }
 }

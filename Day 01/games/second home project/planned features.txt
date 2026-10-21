@@ -40,7 +40,7 @@ Rough Plan:
     b. Power-Up inventory slot 
     c. Have player and boss health bar subtract by percentage (To allow different values for boss/player health)
 2. Change code to allow attributes that can change when called
-3. Code ESC, ENTER/RETURN, and E button input in engine
+3. Code ESC, ENTER/RETURN, and E button to return console log for now [!]DONE[!]
 4. Pause feature
     a. Create and code PauseGameController.js and PauseGameObject.js 
         i. Have it start off by sending a console message

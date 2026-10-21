@@ -11,6 +11,8 @@ class LaserGameObject extends GameObject{
         this.addComponent(new Polygon(), {points:Assets.laser})
 
         this.transform.scale = new Vector2(0.25, 0.5)
+
+        this.addComponent(new Collider())
     }
 }
 
