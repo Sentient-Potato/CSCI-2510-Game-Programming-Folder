@@ -10,6 +10,8 @@ class GenericLevel extends Scene {
         this.instantiate(new PlayerHealthGameObject(), new Vector2(30, 60))
 
         this.instantiate(new PowerUpSlotGameObject(), new Vector2(10, 590))
+    
+        this.instantiate(new BossHealthBarGameObject(), new Vector2(250, 30))
     }
 }
 

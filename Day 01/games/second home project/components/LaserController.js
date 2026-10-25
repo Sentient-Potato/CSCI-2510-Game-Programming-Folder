@@ -4,46 +4,28 @@ class LaserController extends Component{
     targetTag = "Enemy"
     damage = 1
 
+    hit = false
+
     update(){
+        if (this.hit)
+            return
+
         this.transform.position.x += Time.deltaTime * this.speed * this.direction
 
         if(this.transform.position.x > Globals.maxXcoordinate || this.transform.position.x < 90){
             this.gameObject.destroy()
+            return
         }
-/*
-        let myPosition = this.transform.position
-        let enemyGameObjects = GameObject.findGameObjectsWithTag(this.targetTag)
 
-        for (const enemyGameObject of enemyGameObjects) {
-            let enemyPosition = enemyGameObject.transform.position
-            let distance = myPosition.minus(enemyPosition).magnitude
-
-            // Collision check for now. Improve later.
-            if (distance < 90) {
-                this.gameObject.destroy()
-
-                if (this.targetTag == "Enemy") {
-                    let healthComponent = enemyGameObject.getComponent(Health)
-                    healthComponent.health -= this.damage
-                    let gameObjects = GameObject.findGameObjectByType(Transform)
-                    for (const gameObject of gameObjects)
-                        gameObject.broadcastMessage("updatePoints", [1])
-                }
-
-                if (this.targetTag == "MainShip") {
-                    let healthComponent = enemyGameObject.getComponent(Health)
-                    healthComponent.health -= this.damage
-                    let gameObjects = GameObject.findGameObjectByType(Transform)
-                    for (const gameObject of gameObjects)
-                        gameObject.broadcastMessage("updateHealth", [this.damage])
-                }
-            }
-        }
-        */
     }
     onCollisionStay(other) {
+        if (this.hit)
+            return
+
         if (!other.tags || !other.tags.includes(this.targetTag)) 
             return
+
+        this.hit = true
         
         let health = other.getComponent(Health)
 

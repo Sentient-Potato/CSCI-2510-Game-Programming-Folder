@@ -165,4 +165,10 @@ class Assets {
         new Vector2(10, 190),
         new Vector2(0, 160)
     ]
+    static rectangle = [
+        new Vector2(0, 0),
+        new Vector2(1000, 0),
+        new Vector2(1000, 80),
+        new Vector2(0, 80)
+    ]
 }

@@ -12,6 +12,9 @@ class EnemyController extends Component{
     laserTimer = 0
     laserInterval = 1
 
+    // sort of a debug statement to stop enemies from firing lasers
+    stopLasers = false
+
     start() {
         this.laserController = new EnemyLaserController()
         this.gameObject.addComponent(this.laserController)
@@ -45,29 +48,13 @@ class EnemyController extends Component{
                 }
         }
 
-        // let currentPosition = this.transform.position
-        // let playerGameObjects = GameObject.findGameObjectsWithTag("MainShip")
-
-        // for (const playerGameObject of playerGameObjects) {
-        //     let playerPosition = playerGameObject.transform.position
-        //     let distance = currentPosition.minus(playerPosition).magnitude
-
-        //     if (distance < 30) {
-        //         this.gameObject.destroy()
-
-        //         let healthComponent = playerGameObject.getComponent(Health)
-        //         healthComponent.health -= this.shipCollisionDamage
-        //         let gameObjects = GameObject.findGameObjectByType(Transform)
-        //         for (const gameObject of gameObjects) 
-        //         gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
-        //     }
-        // }
-
-        this.laserTimer += Time.deltaTime
-        if (this.laserTimer >= this.laserInterval) {
-            this.laserTimer = 0
-            this.laserController.fireLaser(300, 1, 0.5, 0.25, "yellow", 80, 50)
-            this.laserInterval = Math.random() * 1 + 0.5
+        if (!this.stopLasers) {
+            this.laserTimer += Time.deltaTime
+            if (this.laserTimer >= this.laserInterval) {
+                this.laserTimer = 0
+                this.laserController.fireLaser(300, 1, 0.5, 0.25, "yellow", 80, 50)
+                this.laserInterval = Math.random() * 1 + 0.5
+            }
         }
     }
 
