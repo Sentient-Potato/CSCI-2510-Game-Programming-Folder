@@ -56,7 +56,7 @@ export class ObjectPooler {
 
             // If object is no longer active
             if (!obj.active) {
-                this.releaseAll(obj) // Moves the object from "active" back to "pool"
+                this.release(obj) // Moves the object from "active" back to "pool"
             }
         }
 

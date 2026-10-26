@@ -39,6 +39,7 @@ Planned Features:
 Object Pooling: Things that will probably need to be in an object pool:
 1. LASERS, ESPECIALLY THE LASERS!
 2. The minion enemies
+3. The power-ups
 
 
 
