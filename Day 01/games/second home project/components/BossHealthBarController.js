@@ -3,7 +3,7 @@ class BossHealthBarController extends Component {
         let bosses = GameObject.findGameObjectsWithTag("Boss")
 
         if (bosses.length == 0) {
-            this.transform.scale.x = 0
+            this.gameObject.destroy()
             return
         }
 

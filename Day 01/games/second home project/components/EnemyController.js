@@ -13,7 +13,7 @@ class EnemyController extends Component{
     laserInterval = 1
 
     // sort of a debug statement to stop enemies from firing lasers
-    stopLasers = false
+    stopLasers = true
 
     start() {
         this.laserController = new EnemyLaserController()
