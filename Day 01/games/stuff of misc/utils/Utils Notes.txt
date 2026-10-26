@@ -1,0 +1,7 @@
+This folder was made following a tutorial: "How to Optimize Your 2D Games" by @Frankslaboratory
+
+Main purpose is to understand how object pooling is implemented. 
+
+figure out how to add this to the game engine or smth
+
+might need to make a simple "game" to test this out

@@ -1,0 +1,8 @@
+Folder is dedicated for practice or tutorials not tied to the game engine.
+
+Most stuff in this folder will be from tutorials to better understand the concept before attempting it in the game engine.
+
+Note: Keep under "games" folder
+
+Topics:
+- Object pool
