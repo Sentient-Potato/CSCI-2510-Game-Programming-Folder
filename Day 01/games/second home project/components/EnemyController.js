@@ -15,12 +15,18 @@ class EnemyController extends Component{
     // sort of a debug statement to stop enemies from firing lasers
     stopLasers = true
 
+    isActive = false
+
     start() {
         this.laserController = new EnemyLaserController()
         this.gameObject.addComponent(this.laserController)
     }
 
     update(){
+        if (!this.isActive) {
+            return
+        }
+
         this.transform.position.x += Time.deltaTime * this.speed * this.xDirection
 
         this.yRandomTimer += Time.deltaTime
@@ -36,16 +42,21 @@ class EnemyController extends Component{
         this.transform.position.y += Time.deltaTime * this.ySpeed * this.yDirection
         
         if(this.transform.position.x < 0 || this.transform.position.y < 0 || this.transform.position.y > Globals.maxYcoordinate - 60){
-            this.gameObject.destroy()
+            //this.gameObject.destroy()
+            this.isActive = false
+            return
         }
 
         if(this.gameObject.getComponent(Health).health <= 0){
-            this.gameObject.destroy()
+            //this.gameObject.destroy()
+            this.isActive = false
 
             let pointObjects = GameObject.findGameObjectByType(Transform)
                 for (const pointObject of pointObjects) {
                     pointObject.broadcastMessage("updatePoints", [5])
                 }
+
+            return
         }
 
         if (!this.stopLasers) {
@@ -56,6 +67,12 @@ class EnemyController extends Component{
                 this.laserInterval = Math.random() * 1 + 0.5
             }
         }
+    }
+
+    reset() {
+        this.isActive = false
+        let health = this.gameObject.getComponent(Health)
+        health = 3
     }
 
     onCollisionStay(other) {
@@ -70,7 +87,8 @@ class EnemyController extends Component{
         let gameObjects = GameObject.findGameObjectByType(Transform)
         for (const gameObject of gameObjects) {
             gameObject.broadcastMessage("updateHealth", [this.shipCollisionDamage])
-            this.gameObject.destroy()
+            //this.gameObject.destroy()
+            this.isActive = false
         }
     }
 }

@@ -40,6 +40,7 @@ Object Pooling: Things that will probably need to be in an object pool:
 1. LASERS, ESPECIALLY THE LASERS!
 2. The minion enemies
 3. The power-ups
+4. Particles if you're fucking insane enough to try and implement them
 
 
 
@@ -81,6 +82,7 @@ Improvements:
 - Figure out how to optimize health/heart UI code.
 - Maybe put playerhealthcontroller into Health.js
 - Rename playerhealthgameobject and playerheartgameobject to be more different names
+- Start using curly braces on all statements and loops, even if they only have one line of code. Just easier to make it a habit than consciously add or not add braces
 
 
 
