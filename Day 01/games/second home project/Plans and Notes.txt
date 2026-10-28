@@ -141,3 +141,8 @@ Maybe?:
 - BULLET HELL MODE!!!
 - 1 HP Mode bcz fck the player ig?
 - Absolute hell on Earth, let player rotate their ship with A+D to aim and turn
+
+
+
+Other notes:
+- No added arguments in constructors because game engines don't allow it
