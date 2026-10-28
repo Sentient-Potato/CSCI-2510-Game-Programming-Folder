@@ -43,12 +43,29 @@ class Scene {
             }
         }
 
+        // Handles polygon collision
+        const physicalCollisions = []
         for (let i = 0; i < collidable.length; i++) {
             for (let j = i + 1; j < collidable.length; j++) {
-                if (Collisions.isCollisionPointPolygonPolygon(collidable[i], collidable[j])) {
+                const minimumTransformVector = Collisions.isCollisionPointPolygonPolygon(collidable[i], collidable[j])
+                if (minimumTransformVector) {
                     collidable[i].broadcastMessage("onCollisionStay", [collidable[j]])
                     collidable[j].broadcastMessage("onCollisionStay", [collidable[i]])
+
+                    if (collidable[i].getComponent(RigidBody) || collidable[j].getComponent(RigidBody)) {
+                        physicalCollisions.push({one:collidable[i], two:collidable[j], minimumTransformVector})
+                    }
                 }
+            }
+        }
+
+        // Handles physics
+        for (const physicalCollision of physicalCollisions) {
+            if (physicalCollision.one.getComponent(RigidBody)) {
+                physicalCollision.one.transform.position.plusEquals(physicalCollision.minimumTransformVector)
+            }
+            if (physicalCollision.two.getComponent(RigidBody)) {
+                physicalCollision.two.transform.position.plusEquals(physicalCollision.minimumTransformVector)
             }
         }
 

@@ -33,4 +33,16 @@ class Vector2{
         return new Vector2(this.y, -this.x)
     }
 
+    normalize() {
+        return new Vector2(this.x/this.magnitude, this.y/this.magnitude)
+    }
+    
+    scaled(scalar) {
+        return new Vector2(this.x * scalar, this.y * scalar)
+    }
+
+    plusEquals(other) {
+        this.x += other.x
+        this.y += other.y 
+    }
 }
