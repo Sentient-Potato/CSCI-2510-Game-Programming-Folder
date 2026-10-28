@@ -49,8 +49,8 @@ class Scene {
             for (let j = i + 1; j < collidable.length; j++) {
                 const minimumTransformVector = Collisions.isCollisionPointPolygonPolygon(collidable[i], collidable[j])
                 if (minimumTransformVector) {
-                    collidable[i].broadcastMessage("onCollisionStay", [collidable[j]])
-                    collidable[j].broadcastMessage("onCollisionStay", [collidable[i]])
+                    collidable[i].broadcastMessage("onCollisionStay", [collidable[j], minimumTransformVector])
+                    collidable[j].broadcastMessage("onCollisionStay", [collidable[i], minimumTransformVector.scaled(-1)])
 
                     if (collidable[i].getComponent(RigidBody) || collidable[j].getComponent(RigidBody)) {
                         physicalCollisions.push({one:collidable[i], two:collidable[j], minimumTransformVector})
