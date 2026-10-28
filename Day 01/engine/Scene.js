@@ -65,7 +65,7 @@ class Scene {
                 physicalCollision.one.transform.position.plusEquals(physicalCollision.minimumTransformVector)
             }
             if (physicalCollision.two.getComponent(RigidBody)) {
-                physicalCollision.two.transform.position.plusEquals(physicalCollision.minimumTransformVector)
+                physicalCollision.two.transform.position.plusEquals(physicalCollision.minimumTransformVector.scaled(-1))
             }
         }
 
