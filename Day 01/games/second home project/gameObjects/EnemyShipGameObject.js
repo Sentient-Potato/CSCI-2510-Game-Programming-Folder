@@ -1,5 +1,5 @@
 class EnemyShipGameObject extends GameObject {
-    constructor(xDirection = 1, speed = 120) {
+    constructor() {
         super("Enemy", ["Enemy"], "enemyships")
 
         const ENEMY_POOL_SIZE = 12 // First testing with pool size 12. Remember to check console to see if this is big enough
@@ -7,8 +7,6 @@ class EnemyShipGameObject extends GameObject {
         this.pool = new ObjectPooler(() => {this.createEnemy()}, ENEMY_POOL_SIZE)
 
         let enemyController = new EnemyController()
-        enemyController.xDirection = xDirection
-        enemyController.speed = speed
 
         //this.addComponent(new Polygon(), {fillStyle: "darkRed", points:Assets.enemyShip})
         this.addComponent(enemyController)
