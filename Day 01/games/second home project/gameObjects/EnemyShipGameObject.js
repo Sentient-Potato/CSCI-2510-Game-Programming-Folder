@@ -1,6 +1,6 @@
 class EnemyShipGameObject extends GameObject {
     constructor() {
-        super("Enemy", ["Enemy"], "enemyships")
+        super("Enemy", ["Enemy"], "ships")
 
         const ENEMY_POOL_SIZE = 12 // First testing with pool size 12. Remember to check console to see if this is big enough
 

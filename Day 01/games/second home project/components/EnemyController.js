@@ -1,5 +1,5 @@
 class EnemyController extends Component{
-    xDirection = 1
+    xDirection = -1
     speed = 70
 
     shipCollisionDamage = 5
@@ -15,7 +15,7 @@ class EnemyController extends Component{
     // sort of a debug statement to stop enemies from firing lasers
     stopLasers = true
 
-    isActive = false
+    isActive = true
 
     start() {
         this.laserController = new EnemyLaserController()

@@ -159,3 +159,6 @@ This ensures that all pooled objects are deactivated and resets to their default
 
 ====================================
 */
+
+// It's off of a tutorial. It's not what I'll be using since the engine the tutorial was using is very different to the one we're making in class. I'm trying
+// understand the execution of the code to try and make my own object pooler. So, I'm making a burner game where I can solely test object pooling

@@ -18,6 +18,14 @@ class BossController extends Component {
         this.laserController = new EnemyLaserController()
         this.gameObject.addComponent(this.laserController)
     }
+/*
+
+        if(this.timeSinceLastLaser > 30 && Input.keysDown.includes("Space")){
+            this.timeSinceLastLaser = 0
+            let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
+            laserGameObject.getComponent(Polygon).fillStyle = "lime"
+        }
+*/
 
     update() {
         if(this.gameObject.getComponent(Health).health <= 0)
@@ -91,7 +99,7 @@ class BossController extends Component {
     }
 
     summonEnemyShip(addYPosition, enemySpeed) {
-        let minion = new EnemyShipGameObject(-1, enemySpeed)
+        let minion = new EnemyShipGameObject()
         let bossPosition = this.transform.position
         instantiate(minion, new Vector2(bossPosition.x - 100, bossPosition.y + addYPosition))
     }

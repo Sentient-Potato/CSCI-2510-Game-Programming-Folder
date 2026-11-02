@@ -10,4 +10,8 @@ class LaserGameObject extends GameObject{
 
         this.addComponent(new Collider())
     }
+
+    reset() {
+        this.getComponent(LaserController).reset()
+    }
 }

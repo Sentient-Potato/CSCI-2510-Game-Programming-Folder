@@ -2,7 +2,10 @@ class TextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
     font = "10px arial"
-    alignItems = "center"
+
+    textAlign = "left" // Horizontal alignment: "center", "left", and "right"
+    textBaseline = "alphabetic" // Vertical alignment: "top", "hanging", "middle", "alphabetic", "ideographic", "bottom"
+    // Look at w3schools graphics canvas text alignment for visual reference
 
     draw(ctx) {
         //let position = this.transform.position
@@ -17,7 +20,9 @@ class TextLabel extends Component{
 
         ctx.fillStyle = this.fillStyle
         ctx.font = this.font
-        ctx.alignItems = this.alignItems
+        ctx.textAlign = this.textAlign
+        ctx.textBaseline = this.textBaseline
+
 
         ctx.fillText(this.text, 0, 0)
 

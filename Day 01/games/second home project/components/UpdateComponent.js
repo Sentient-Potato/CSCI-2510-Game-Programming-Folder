@@ -45,8 +45,6 @@ class UpdateComponent extends Component {
         }
     }
 
-    fireLaser() {
-        // This function should handle getting the laser out of the pool to fire
-    }
+    //fireLaser() {}
 
 }

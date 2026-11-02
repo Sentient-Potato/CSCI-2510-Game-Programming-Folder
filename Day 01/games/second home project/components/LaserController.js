@@ -9,12 +9,12 @@ class LaserController extends Component{
     isActive = true
 
     update(){
-        if (this.hit)
-            return
-
         if (!this.isActive) {
             return
         }
+
+        if (this.hit)
+            return
 
         // Try to set isActive to true in the gameObject file when the item is first created.
         // If it doesn't work, come back here and try to activate it here.
@@ -31,9 +31,14 @@ class LaserController extends Component{
 
     reset() {
         this.isActive = false
+        this.hit = false
     }
 
     onCollisionStay(other) {
+        if (!this.isActive) {
+            return
+        }
+
         if (this.hit)
             return
 

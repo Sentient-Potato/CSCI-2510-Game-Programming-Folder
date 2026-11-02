@@ -1,5 +1,5 @@
 class Settings {
-    static layers = ["background", "lasers", "enemyships", "playership", "boss", "UI", "menu"]
+    static layers = ["background", "lasers", "power-up", "ships", "boss", "UI", "menu"]
 /*
     background: Background objects that are visual and have no impact on gameplay
     lasers: The lasers being shot. Should be under everything
