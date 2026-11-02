@@ -6,7 +6,7 @@ class LaserController extends Component{
 
     hit = false
 
-    isActive = false
+    isActive = true
 
     update(){
         if (this.hit)
