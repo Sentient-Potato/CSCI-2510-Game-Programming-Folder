@@ -1,6 +1,8 @@
 class GenericLevel extends Scene{
     constructor(){
         super("grey")
-        this.instantiate(new squareGameObject(), new Vector2(50, 50))
+        this.instantiate(new inputControllerGameObject())
+        let squareObject = this.instantiate(new squareGameObject())
+        squareObject.reset()
     }
 }

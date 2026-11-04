@@ -20,7 +20,6 @@ class Input{
         if (Input.mousePositionLastFrame) {
             Input.mouseDelta = Input.mousePosition.minus(Input.mousePosition)
         }
-
     }
 
     static mousedown(event) {

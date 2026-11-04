@@ -1,4 +1,4 @@
-export class ObjectPooler {
+class ObjectPooler {
     constructor(factoryFn, poolSize) {
         // factoryFn (factory function) creates objects. Can be any function that creates and returns a new object.
         // The object pooler doesn't need to know how the factoryFn works
