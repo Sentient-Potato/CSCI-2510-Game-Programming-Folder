@@ -9,5 +9,7 @@ class inputControllerGameObject extends GameObject{
         //this.addComponent(new clickCreateController())
         this.addComponent(new viewPoolController())
         this.addComponent(new squareObjectController())
+
+        this.addComponent(new poolTrackerController())
     }
 }

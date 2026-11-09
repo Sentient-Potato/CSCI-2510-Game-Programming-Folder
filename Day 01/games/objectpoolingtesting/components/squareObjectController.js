@@ -10,7 +10,6 @@ class squareObjectController extends Component{
     update(){
         if (Input.mouseButtonsDownThisFrame.includes(0)) {
             console.log("Left mouse button has been clicked.")
-            this.spawnSquare(0, 0)
         }
         if (!this.active) {
             return
@@ -22,9 +21,10 @@ class squareObjectController extends Component{
             let square = instantiate(new squareGameObject(), new Vector2(-1000, -1000))
             return square
         }
+
         else if (this.randomCreateAttr) {
             let randomOne = Math.floor(Math.random() * 100 + 300)
-            let randomTwo = Math.floor(Math.random() * 40 + 150)
+            let randomTwo = Math.floor(Math.random() * 20 + 150)
             let randomFlip = Math.floor(Math.random() * 2)
             let coinFlip
             if (randomFlip == 1) {
@@ -45,9 +45,9 @@ class squareObjectController extends Component{
         }
     }
 
-    spawnSquare(x, y) {
-        const square = this.pool.get()
-    }
+    // spawnSquare(x, y) { // Figure this out
+    //     const square = this.pool.get()
+    // }
     
     reset() {
 

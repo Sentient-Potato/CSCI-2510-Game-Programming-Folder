@@ -6,6 +6,8 @@ class GenericLevel extends Scene{
         //this.instantiate(new viewPoolLight(), new Vector2(20, 20))
         // let squareObject = this.instantiate(new squareGameObject())
         // squareObject.reset()
+
+        this.instantiate(new inPoolTrackerGameObject(), new Vector2(60, 60))
         
     }
 }
