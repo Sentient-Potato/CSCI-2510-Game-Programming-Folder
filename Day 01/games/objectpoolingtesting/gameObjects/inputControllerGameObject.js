@@ -6,7 +6,8 @@ class inputControllerGameObject extends GameObject{
         //this.addComponent(new RigidBody())
         //this.addComponent(new clickCreateGameObjectController)
         //this.transform.scale = new Vector2(1,1)
-        this.addComponent(new clickCreateController())
+        //this.addComponent(new clickCreateController())
         this.addComponent(new viewPoolController())
+        this.addComponent(new squareObjectController())
     }
 }
