@@ -23,7 +23,17 @@ class squareObjectController extends Component{
             return square
         }
         else if (this.randomCreateAttr) {
-            let randomCoord = Math.floor(Math.random() * 100 + 250)
+            let randomOne = Math.floor(Math.random() * 100 + 300)
+            let randomTwo = Math.floor(Math.random() * 40 + 150)
+            let randomFlip = Math.floor(Math.random() * 2)
+            let coinFlip
+            if (randomFlip == 1) {
+                coinFlip = -1
+            }
+            else {
+                coinFlip = 1
+            }
+            let randomCoord = randomOne + randomTwo * coinFlip
             const colors = [
                 "pink", "purple", "orange", "blue", "yellow", "cyan", "black", "red", "green", "lime", "magenta", "brown", 
                 "#9932CC", "#8B008B", "#FF1493", "#FFD700", "#4B0082", "#7FFFD4", "#FFFACD"

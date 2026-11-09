@@ -9,8 +9,8 @@ class viewPoolController extends Component{
         this.buffer += Time.deltaTime
 
         if (!this.viewingPool && Input.keysDown.includes("Space") && this.buffer >= 2) {
-            Camera.main.transform.position.x = -800
-            Camera.main.transform.position.y = -800
+            Camera.main.transform.position.x = -700
+            Camera.main.transform.position.y = -700
             this.viewingPool = true
             this.buffer = 0
             this.viewLightObject.getComponent(Polygon).fillStyle = "green"
