@@ -38,6 +38,7 @@ class ObjectPooler {
         // Pushes obj into active array
         this.active.push(obj)
 
+        console.log("Pool get() called")
         return obj
     }
 

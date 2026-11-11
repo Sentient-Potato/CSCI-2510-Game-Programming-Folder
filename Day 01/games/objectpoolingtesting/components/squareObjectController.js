@@ -10,6 +10,8 @@ class squareObjectController extends Component{
     update(){
         if (Input.mouseButtonsDownThisFrame.includes(0)) {
             console.log("Left mouse button has been clicked.")
+            const square = this.pool.get()
+            
         }
         if (!this.active) {
             return
@@ -45,8 +47,8 @@ class squareObjectController extends Component{
         }
     }
 
-    // spawnSquare(x, y) { // Figure this out
-    //     const square = this.pool.get()
+    // spawnSquare(object) { // Figure this out
+        
     // }
     
     reset() {

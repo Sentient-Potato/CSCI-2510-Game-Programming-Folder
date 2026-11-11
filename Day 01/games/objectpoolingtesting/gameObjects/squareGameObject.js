@@ -6,10 +6,10 @@ class squareGameObject extends GameObject{
         //this.addComponent(new squareObjectController())
     }
 
-    // spawn(x, y) {
-    //     this.transform.position.x = x
-    //     this.transform.position.y = y
-    // }
+    spawn(x, y) {
+        this.transform.position.x = x
+        this.transform.position.y = y
+    }
     
     reset() {
         this.transform.position.y = -500
