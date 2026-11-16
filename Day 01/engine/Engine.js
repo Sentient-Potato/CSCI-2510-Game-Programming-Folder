@@ -30,6 +30,8 @@ class Engine{
         //mouse stalker 3
         addEventListener("mousemove", Input.mousemove)
 
+        addEventListener("contextmenu", e=>e.preventDefault())
+
         SceneManager.nextScene = nextScene
 
         if (settings) {

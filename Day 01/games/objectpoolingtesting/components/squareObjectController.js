@@ -1,6 +1,6 @@
 class squareObjectController extends Component{
     start(){
-        this.randomCreateAttr = false
+        this.randomCreateAttr = true
         this.active = false
         const SQUARE_POOL_SIZE = 5
         this.pool = new ObjectPooler(() => {return this.createSquare()}, SQUARE_POOL_SIZE)

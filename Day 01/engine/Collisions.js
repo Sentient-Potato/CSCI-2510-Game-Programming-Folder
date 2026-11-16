@@ -26,7 +26,7 @@ class Collisions {
         return true
     }
 
-    static isCollisionPointPolygonPolygon(gameObject, gameObjectTwo) {
+    static isCollisionPolygonPolygon(gameObject, gameObjectTwo) {
         // Move everything into world space
         let worldSpacePoints = []
         for (let point of gameObject.getComponent(Collider).points) {
@@ -75,8 +75,7 @@ class Collisions {
             if (Math.max(...polygonProjectionsTwo) < Math.min(...polygonProjections) || Math.min(...polygonProjectionsTwo) > Math.max(...polygonProjections)) 
                 return false
             // Else... the shadow overlapped
-            const minOverlap = Math.min(Math.min(Math.max(...polygonProjectionsTwo) - Math.min(...polygonProjections), Math.max(...polygonProjections) - Math.min(...polygonProjectionsTwo)))
-
+            const minOverlap = Math.min(Math.max(...polygonProjectionsTwo) - Math.min(...polygonProjections), Math.max(...polygonProjections) - Math.min(...polygonProjectionsTwo))
             if (minOverlap < minimumTransformVector.magnitude) {
                 minimumTransformVector = axis.normalize().scaled(minOverlap)
             }

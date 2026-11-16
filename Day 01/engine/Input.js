@@ -1,6 +1,7 @@
 class Input{
     //abracadabra
     static keysDown = []
+
     static keysDownThisFrame = []
     static keysUpThisFrame = []
 
@@ -18,7 +19,7 @@ class Input{
         }
         Input.mousePosition = new Vector2(event.clientX, event.clientY)
         if (Input.mousePositionLastFrame) {
-            Input.mouseDelta = Input.mousePosition.minus(Input.mousePosition)
+            Input.mouseDelta = Input.mousePosition.minus(Input.mousePositionLastFrame)
         }
     }
 
