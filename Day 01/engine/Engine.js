@@ -5,6 +5,8 @@ class Engine{
 
     static layers = ["default", "UI"]
 
+    static collisionLayers = []
+
     static aspectRatio
 
     static cameraWidthInWorldSpace
@@ -38,6 +40,9 @@ class Engine{
             Engine.layers = settings.layers
             Engine.aspectRatio = settings.aspectRatio 
             Engine.cameraWidthInWorldSpace = settings.cameraWidthInWorldSpace
+            if (settings.collisionLayers) {
+                Engine.collisionLayers = settings.collisionLayers
+            }
         }
 
         requestAnimationFrame(Engine.gameLoop)
