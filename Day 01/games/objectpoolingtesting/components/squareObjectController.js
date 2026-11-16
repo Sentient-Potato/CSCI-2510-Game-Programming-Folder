@@ -13,7 +13,6 @@ class squareObjectController extends Component{
             const square = this.pool.get()
 
             square.transform.position = Input.mousePosition.clone()
-            
         }
         if (!this.active) {
             return
@@ -49,10 +48,6 @@ class squareObjectController extends Component{
             return square
         }
     }
-
-    // spawnSquare(object) { // Figure this out
-        
-    // }
     
     reset() {
 
