@@ -36,6 +36,7 @@ class ObjectPooler {
         }
 
         // Pushes obj into active array
+        obj.active = true
         this.active.push(obj)
 
         console.log("Pool get() called")
@@ -69,6 +70,7 @@ class ObjectPooler {
         if (index > -1) {
             this.active.splice(index, 1) // Remove the element at that index
             obj.reset() // Make sure all pooled objects have a reset() method that restores them to default state
+            obj.active = false
             this.pool.push(obj) // Back to pool
             // The object is removed from "active", reset to default, and pushed back into "pool"
         }

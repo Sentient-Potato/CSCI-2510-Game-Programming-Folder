@@ -1,9 +1,9 @@
 class squareObjectController extends Component{
     start(){
-        this.randomCreateAttr = true
+        this.randomCreateAttr = false
         this.active = false
         const SQUARE_POOL_SIZE = 5
-        this.pool = new ObjectPooler(() => {this.createSquare()}, SQUARE_POOL_SIZE)
+        this.pool = new ObjectPooler(() => {return this.createSquare()}, SQUARE_POOL_SIZE)
         
     }
 
@@ -11,6 +11,8 @@ class squareObjectController extends Component{
         if (Input.mouseButtonsDownThisFrame.includes(0)) {
             console.log("Left mouse button has been clicked.")
             const square = this.pool.get()
+
+            square.transform.position = Input.mousePosition.clone()
             
         }
         if (!this.active) {
@@ -21,6 +23,7 @@ class squareObjectController extends Component{
     createSquare() {
         if (!this.randomCreateAttr) {
             let square = instantiate(new squareGameObject(), new Vector2(-1000, -1000))
+            square.active = false
             return square
         }
 
