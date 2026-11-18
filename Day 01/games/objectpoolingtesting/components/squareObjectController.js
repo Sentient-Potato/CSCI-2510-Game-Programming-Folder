@@ -1,6 +1,6 @@
 class squareObjectController extends Component{
     start(){
-        this.randomCreateAttr = true
+        this.randomCreateAttr = false
         this.active = false
         const SQUARE_POOL_SIZE = 5
         this.pool = new ObjectPooler(() => {return this.createSquare()}, SQUARE_POOL_SIZE)
@@ -12,7 +12,8 @@ class squareObjectController extends Component{
             console.log("Left mouse button has been clicked.")
             const square = this.pool.get()
 
-            square.transform.position = Input.mousePosition.clone()
+            square.transform.position = this.mousePos()
+
         }
         if (!this.active) {
             return
@@ -52,4 +53,28 @@ class squareObjectController extends Component{
     reset() {
 
     }
+
+    mousePos() {
+        if (Input.mousePosition) { // Put this math in the component.
+            let matrix = new DOMMatrix()
+            matrix.translateSelf(Engine.canvas.width/2, Engine.canvas.height/2)
+            if (Engine.cameraWidthInWorldSpace) {
+                const scalar = Engine.cameraWidthInWorldSpace/(Engine.canvas.width - Engine.letterBoxingWidth)
+                matrix.scaleSelf(1/scalar, 1/scalar)
+            }
+            matrix.multiplySelf(Camera.main.transform.getWorldMatrix().inverse())
+
+            let worldPositionDOMPoint = matrix.inverse().transformPoint(Input.mousePosition)
+            let worldPosition = new Vector2(worldPositionDOMPoint.x, worldPositionDOMPoint.y)
+            return worldPosition
+        }
+    }
 }
+
+/*
+To Do:
+- Create reset() function
+- Try moving !active in update() to fixedUpate()
+- Try having randomCreateAttri only apply when active = false but apply default settings when active. 
+- If the above is successful, reverse it (minus random positioning, only random colors)
+*/

@@ -14,6 +14,7 @@ class Engine{
     static letterBoxingWidth = 0
     static letterBoxingHeight = 0
 
+    static lastTimeStep
 
     static start(nextScene, settings) {
         //Grab the canvas element and put it into an element name
@@ -48,7 +49,16 @@ class Engine{
         requestAnimationFrame(Engine.gameLoop)
     }
 
-    static gameLoop() {
+    static gameLoop(timestamp) {
+        if (!Engine.lastTimeStep) {
+            Engine.lastTimeStep = timestamp
+        }
+        else {
+            const diffInMilliseconds = timestamp - Engine.lastTimeStep
+            const diffInSeconds = diffInMilliseconds / 1000
+            Time.deltaTime = diffInSeconds
+            Engine.lastTimeStep = timestamp
+        }
         SceneManager.update()
 
         //Update and draw

@@ -31,7 +31,7 @@ class Scene {
         // Collision
         const collidable = GameObject.findGameObjectByType(Collider)
         
-        if (Input.mousePosition) {
+        if (Input.mousePosition) { // Put this math in the component.
             let matrix = new DOMMatrix()
             matrix.translateSelf(Engine.canvas.width/2, Engine.canvas.height/2)
             if (Engine.cameraWidthInWorldSpace) {
