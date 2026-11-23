@@ -3,7 +3,7 @@ class GenericLevel extends Scene {
         super("black")
         this.instantiate(new GameAreaGameObject(), new Vector2(0, 0), 0)
         this.instantiate(new MainGameObject(), new Vector2(1200, 200), 0)
-        //this.instantiate(new BossGameObject(), new Vector2(Globals.maxXcoordinate-200, -100), 0)
+        this.instantiate(new BossGameObject(), new Vector2(Globals.maxXcoordinate-200, -100), 0)
         this.instantiate(new PointsGameObject(), new Vector2(90, 130))
         
         this.instantiate(new PlayerHeartGameObject(), new Vector2(40, 10))
@@ -13,7 +13,7 @@ class GenericLevel extends Scene {
     
         this.instantiate(new BossHealthBarGameObject(), new Vector2(250, 30))
 
-        this.instantiate(new PowerUpGameObject(), new Vector2(900, 300))
+        //this.instantiate(new PowerUpGameObject(), new Vector2(900, 300))
     }
 }
 

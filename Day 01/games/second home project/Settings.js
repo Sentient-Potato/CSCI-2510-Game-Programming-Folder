@@ -1,5 +1,6 @@
 class Settings {
-    static layers = ["background", "lasers", "power-up", "ships", "boss", "UI", "menu"]
+    static layers = ["background", "lasers", "power-usp", "ships", "boss", "UI", "menu"]
+    static collisionLayers = [["lasers", "ships"], ["power-ups", "ships"]]
 /*
     background: Background objects that are visual and have no impact on gameplay
     lasers: The lasers being shot. Should be under everything
@@ -8,5 +9,14 @@ class Settings {
     boss: The boss object. Should be on top, here in case I code a "boss charge/rush" attack
     UI: The health, points, inventory slot, the GUI that are ON SCREEN but not IN THE GAME itself. Does not include menu screens
     menu: The menu screens. Mostly for the pause menu.
+
+
+    class Settings{
+    static layers = ["background", "midground", "foreground", "default", "UI"]
+    // static aspectRatio = 9/16
+    // static cameraWidthInWorldSpace = 262
+    static collisionLayers = [["default", "foreground"]]
+}
+
 */
 }

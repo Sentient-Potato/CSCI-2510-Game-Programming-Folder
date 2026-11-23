@@ -18,3 +18,15 @@ class BossHealthBarController extends Component {
 
 
 }
+
+/*
+    const uiButton = this.instantiate(new UIButton())
+    // uiButton.transform.anchorMin = new Vector2(1, 1)
+    // uiButton.transform.anchorMax = new Vector2(1, 1)
+    // uiButton.transform.offsetUpperLeft = new Vector2(-150, -150)
+    // uiButton.transform.offsetLowerRight = new Vector2(-50, -50)
+    uiButton.transform.anchorMin = new Vector2(0.5, 1)
+    uiButton.transform.anchorMax = new Vector2(0.5, 1)
+    uiButton.transform.offsetUpperLeft = new Vector2(-700, -710)
+    uiButton.transform.offsetLowerRight = new Vector2(700, -680)
+*/
