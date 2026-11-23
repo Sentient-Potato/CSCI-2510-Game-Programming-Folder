@@ -1,6 +1,6 @@
 class squareObjectController extends Component{
     start(){
-        this.randomCreateAttr = false
+        this.randomCreateAttr = true
         this.active = false
         const SQUARE_POOL_SIZE = 5
         this.pool = new ObjectPooler(() => {return this.createSquare()}, SQUARE_POOL_SIZE)
@@ -15,8 +15,14 @@ class squareObjectController extends Component{
             square.transform.position = this.mousePos()
             this.randomColor(square)
         }
-        if (!this.active) {
-            return
+
+        if (Input.keysDownThisFrame.includes("Backspace")) {
+            console.log("Backspace has been pressed")
+            if (this.pool.active.length > 0) {
+                let square = this.pool.active[this.pool.active.length - 1]
+
+                this.pool.release(square)
+            }
         }
     }
 
@@ -50,8 +56,9 @@ class squareObjectController extends Component{
         }
     }
     
-    reset() {
-
+    reset(obj) {
+        this.active = false
+        obj.transform.position = new Vector2(-1000, -1000)
     }
 
     randomColor(obj) {
@@ -79,11 +86,3 @@ class squareObjectController extends Component{
         }
     }
 }
-
-/*
-To Do:
-- Create reset() function
-- Try moving !active in update() to fixedUpdate()
-- Try having randomCreateAttri only apply when active = false but apply default settings when active. 
-- If the above is successful, reverse it (minus random positioning, only random colors)
-*/

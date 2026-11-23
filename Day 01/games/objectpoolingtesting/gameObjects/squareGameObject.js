@@ -3,7 +3,6 @@ class squareGameObject extends GameObject{
         super("squareGameObject", [], "default")
         this.addComponent(new Polygon(), {fillStyle: 'magenta', points: Assets.square})
         this.transform.scale = new Vector2(20, 20)
-        //this.addComponent(new squareObjectController())
     }
     
     reset() {

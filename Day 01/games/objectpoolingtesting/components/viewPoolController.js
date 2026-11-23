@@ -25,7 +25,3 @@ class viewPoolController extends Component{
         }
     }
 }
-
-// Press a button to view where the pool objects are on the screen for testing.
-            // let laserGameObject = instantiate(new LaserGameObject(), this.transform.position.clone())
-            // laserGameObject.getComponent(Polygon).fillStyle = "blue"

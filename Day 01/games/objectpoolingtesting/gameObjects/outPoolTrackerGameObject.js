@@ -6,7 +6,3 @@ class outPoolTrackerGameObject extends GameObject{
 
     }
 }
-
-/*
-Text that tracks the objects OUT the pool
-*/
