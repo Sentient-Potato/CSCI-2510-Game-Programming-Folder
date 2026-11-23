@@ -1,6 +1,7 @@
 class Settings {
-    static layers = ["background", "lasers", "power-usp", "ships", "boss", "UI", "menu"]
-    static collisionLayers = [["lasers", "ships"], ["power-ups", "ships"]]
+    static layers = ["background", "lasers", "power-ups", "ships", "boss", "UI", "menu"]
+    static collisionLayers = [["lasers", "ships"], ["lasers", "boss"], ["power-ups", "ships"]]
+
 /*
     background: Background objects that are visual and have no impact on gameplay
     lasers: The lasers being shot. Should be under everything

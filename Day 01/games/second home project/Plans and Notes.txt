@@ -1,11 +1,6 @@
 A text file of features to add to this game or improvements needed to be worked on. 
 Also some reminders to implement after class work
 
-[!][!][!]
-~ ADD COLLISION SCRIPT SOURCE IN HTML!
-~ FIX MULTILINE TEXT LABEL
-[!][!][!]
-
 Done:
 - Hold spacebar to shoot lasers
 - Stop the player from moving off the "game area"
@@ -18,6 +13,26 @@ Done:
 - Boss has health bar now
 - Player and boss health scale in percentiles
 - Better collision check
+
+
+[!] TO-DO LIST [!]
+- Anchor boss health bar
+- Anchor player health
+- Anchor points
+- Anchor power-up slot 
+- Create basic opening screen
+- Create basic closing/death screen
+- Create laser object pool
+- Create minion object pool
+- Cry 
+- Forget that you wrote this to-do list 
+- Remember that you wrote this to-do list
+- Ignore it
+- Cry because you're ignoring the to-do list
+- Wonder why you made a to-do list if you were going to ignore it in the first place 
+- Stop crying metaphorically and get back to work 
+- Realize that you got distracted while writing this to-do list
+- oops
 
 
 

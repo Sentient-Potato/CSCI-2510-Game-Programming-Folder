@@ -19,5 +19,9 @@ class MainScene extends Scene{
     let colorSquare = this.instantiate(new SquareGameObject(), new Vector2(-700, -300))
     colorSquare.getComponent(Transform).scale = new Vector2(50, 50)
     colorSquare.getComponent(Polygon).fillStyle = "Aqua"
+
+      const closingSceneControllerGameObject = new GameObject("Closing Scene Controller", [], "UI")
+      closingSceneControllerGameObject.addComponent(new ClosingSceneController())
+      this.instantiate(closingSceneControllerGameObject)
   }
 }
