@@ -1,6 +1,7 @@
 class Polygon extends Component{
     fillStyle = "magenta"
     points = []
+    alpha = 1
 
     draw(ctx) {
         //let position = this.transform.position
@@ -8,10 +9,7 @@ class Polygon extends Component{
         //This signals to the context that we're going to draw something (Prof note)
         ctx.save()
 
-        //Set center of our object (Prof note)
-        // ctx.translate(this.transform.position.x, this.transform.position.y)
-        // ctx.scale(this.transform.scale.x, this.transform.scale.y)
-        // ctx.rotate(this.transform.rotation)
+        ctx.globalAlpha = this.alpha
 
         ctx.beginPath()
 

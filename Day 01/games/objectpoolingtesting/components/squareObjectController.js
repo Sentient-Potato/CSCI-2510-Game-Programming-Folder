@@ -13,7 +13,7 @@ class squareObjectController extends Component{
             const square = this.pool.get()
 
             square.transform.position = this.mousePos()
-
+            this.randomColor(square)
         }
         if (!this.active) {
             return
@@ -54,6 +54,15 @@ class squareObjectController extends Component{
 
     }
 
+    randomColor(obj) {
+        const colors = [
+            "pink", "purple", "orange", "blue", "yellow", "cyan", "black", "red", "green", "lime", "magenta", "brown", 
+            "#9932CC", "#8B008B", "#FF1493", "#4B0082", "#7FFFD4", "#FFFACD"
+        ]
+        let randomIndex = Math.floor(Math.random() * colors.length)
+        obj.getComponent(Polygon).fillStyle = colors[randomIndex]
+    }
+
     mousePos() {
         if (Input.mousePosition) { // Put this math in the component.
             let matrix = new DOMMatrix()
@@ -74,7 +83,7 @@ class squareObjectController extends Component{
 /*
 To Do:
 - Create reset() function
-- Try moving !active in update() to fixedUpate()
+- Try moving !active in update() to fixedUpdate()
 - Try having randomCreateAttri only apply when active = false but apply default settings when active. 
 - If the above is successful, reverse it (minus random positioning, only random colors)
 */
