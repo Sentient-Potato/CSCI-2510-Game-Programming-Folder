@@ -1,6 +1,8 @@
 class Settings {
     static layers = ["background", "lasers", "power-ups", "ships", "boss", "UI", "menu"]
     static collisionLayers = [["lasers", "ships"], ["lasers", "boss"], ["power-ups", "ships"]]
+    static aspectRatio = 16/9
+    static cameraWidthInWorldSpace = 1250
 
 /*
     background: Background objects that are visual and have no impact on gameplay

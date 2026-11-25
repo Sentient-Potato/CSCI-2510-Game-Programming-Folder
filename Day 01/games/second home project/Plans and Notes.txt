@@ -22,8 +22,11 @@ Done:
 - Anchor power-up slot 
 - Create basic opening screen
 - Create basic closing/death screen
+- Establish world area for object pooling
+- Create a debug feature that views the object pool area like in the objectpooling test game
 - Create laser object pool
 - Create minion object pool
+- Create their reset functions
 - Cry 
 - Forget that you wrote this to-do list 
 - Remember that you wrote this to-do list
